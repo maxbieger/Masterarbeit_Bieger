@@ -5,8 +5,8 @@ import os
 import random
 
 # Pfade zu Bildern und Modell
-image_path_1 = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\captured_images\Anfangsphase mit wenig licht, wenig wasser'
-model = load_model(r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Python Workspace\Jupyter\.ipynb_checkpoints\master\best_model20.01.2025_16-18-27.h5')
+image_path_1 = r'master\captured_images\Anfangsphase mit wenig licht, wenig wasser'
+model = load_model(r'master\Yolo\best_model20.01.2025_16-18-27.h5')#Todo: Pfad anpassen
 
 # Labels für Vorhersageklassen
 labels = ['Healthy', 'Dry']

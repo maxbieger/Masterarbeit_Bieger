@@ -27,8 +27,6 @@ from datetime import datetime
 from keras.layers import Conv2D, Activation, BatchNormalization, MaxPooling2D, Dropout, Multiply
 from itertools import product
 from keras.layers import Conv2D, Multiply, Flatten, Dense
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -68,11 +66,6 @@ def visualize_and_save_conv_filters(model, save_dir):
             print(f"Konvolutionsmatrix gespeichert unter: {save_path}")
             plt.show()
 
-def konvMatrix(model,save_dir):
-    preds = model.predict(test)  # Running model on the test dataset
-    test_loss, test_acc = model.evaluate(test)
-# gib mir für dieses modell und die predict daten die konvolutionmatrix
-
 param_grid = {
     'learning_rate': [0.001],#0.05 beste ergebnisse als 0.01, 0.2, ab 0.05 nur noch 65%, 0.001 =88
     'epochs_list': [4],#da viele bilde, wenig epochen
@@ -83,8 +76,8 @@ param_grid = {
     'Augmentierung':[True]# Augmentierung ein/aus schalten
 }
 DatensatzName= "Dataset_complete_neu"
-Ergebnisse_pfad = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Ergebnisse.txt'
-model_save_path = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master'
+Ergebnisse_pfad = r'master\CNN\ErgebnisseCNN.txt'
+model_save_path = r'master\CNN'
 batch_size= 8
 Early_stopping_patience = 5
 plot = True
@@ -93,11 +86,11 @@ Show_Augmentation_on_train = False
 
 # Loading training, testing, and validation directories
 # wird für das Training verwendet
-train_dir = fr'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\captured_images\{DatensatzName}\Train'
+train_dir = fr'master\CNN\{DatensatzName}\Train'
 # wird accuracy berechnung des modells wären des trainings verwendet
-val_dir = fr'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\captured_images\{DatensatzName}\Validation'
+val_dir = fr'master\CNN\{DatensatzName}\Validation'
 # wird am ende des Progrmms verwendet um das fertige modell mit neuen daten zu testen
-test_dir = fr'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\captured_images\{DatensatzName}\Test'
+test_dir = fr'master\CNN\{DatensatzName}\Test'
 
 
 def InErgebnisseDateiSichern(text):
@@ -416,7 +409,6 @@ for params in grid:
 # # Rufe die Funktion auf
 # visualize_and_save_conv_filters(best_model, filter_save_dir)
 
-#konvMatrix(model,model_save_path)
 
 # Beste Ergebnisse ausgeben
 model.save(os.path.join(os.path.dirname(__file__), f'best_model{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))

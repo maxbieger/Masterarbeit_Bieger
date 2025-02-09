@@ -4,7 +4,7 @@ import shutil
 
 # Basisverzeichnis des Datensatzes
 Dataset_name = 'Dataset_yolo2'
-base_dir = fr'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\{Dataset_name}'
+base_dir = fr'master\Yolo\{Dataset_name}'
 
 
 #Aufgaben die dieses Programm erfüllt

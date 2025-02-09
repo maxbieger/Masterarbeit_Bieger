@@ -6,17 +6,22 @@ from PIL import Image
 train = True
 val=True
 DatensatzName = "Dataset_yolo2"
-image_dir = fr'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\{DatensatzName}\Train'
-data_dir = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo'
+image_dir = fr'master\Yolo\{DatensatzName}\Train'
+data_dir = r'master\Yolo'
 
+#Validation
+model = YOLO(r"C:\Users\maxbi\runs\detect\train\weights\best.pt")
+Anzahl_Bilder = 10
+image_path = r"C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\Dataset_yolo2\Test"
+        
 if train:
     # 1. Modell laden (vortrainiertes YOLOv8-Modell)
-    model = YOLO("yolov8m.pt")  # yolov8m.pt = keine echtzeit aber genauer
+    model = YOLO("yolov8m.pt")  # yolov8m.pt = keine echtzeit aber genauer, sonst yolov8n.pt
 
     # 2. Training starten
     #results = model.train(data=r"C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\data.yaml", epochs=100, imgsz=640)
     model.train(
-        data=r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\data.yaml',
+        data=r'master\Yolo\data.yaml',
         epochs=50,                 # Anzahl der Epochen
         imgsz=192,                 # Bildgröße
         batch=16,                  # Batchgröße
@@ -33,13 +38,9 @@ if train:
 
 
 if val:
-    # 1. Modell laden
-    model = YOLO(r"C:\Users\maxbi\runs\detect\train\weights\best.pt")
-
-    for i in range(10):
+    for i in range(Anzahl_Bilder):
         # 2. Testbild analysieren
         #image_path = os.path.join(data_dir,DatensatzName, "Test")
-        image_path = r"C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\Dataset_yolo2\Test"
         jpg_files = [file for file in os.listdir(image_path) if file.endswith('.jpg')]
         random_image = random.choice(jpg_files)
         results = model(os.path.join(image_path, random_image), save=True, save_dir=data_dir)

@@ -1,4 +1,4 @@
-import tensorflow as tf
+#import tensorflow as tf
 import os
 from keras.applications import ResNet50, ResNet101
 from keras.applications import EfficientNetB0
@@ -12,18 +12,21 @@ from sklearn.model_selection import ParameterGrid
 from keras.layers import Rescaling 
 import numpy as np
 seed = 123
+from datetime import datetime
 
-Ergebnisse_pfad = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\ResNet\Ergebnisse.txt'
-data_dir = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\ResNet\Dataset_ResNet_mini'
+Ergebnisse_pfad = r'master\ResNet\Ergebnisse.txt'
+data_dir = r'master\ResNet\Dataset_ResNet_mini'
 train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in ["Train", "Validation", "Test"]]
 
 # Hyperparameter
 batch_size = 32
 img_size = (192, 256)
 early_stopping_patience = 3
-model_save_path = r'C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\ResNet\resnet_model.h5'
 plot=False
 
+
+aktuelle_zeit = datetime.now()
+model_save_path = fr'master\ResNet\ResNet_model_{aktuelle_zeit.strftime("%d.%m.%Y")+"_"+aktuelle_zeit.strftime("%H:%M:%S")}.h5'
 
 param_grid = {
     'learning_rate': [0.001],
