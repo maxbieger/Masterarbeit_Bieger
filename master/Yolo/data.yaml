@@ -1,0 +1,7 @@
+path: C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo
+train: Dataset_yolo2\Train
+val: Dataset_yolo2\Validation
+#test: Dataset_yolo2\Test #Optional
+names:
+    0: Healthy
+    1: Dry
