@@ -1,0 +1,307 @@
+--------Neuer Programm start:----------
+loss: [0.5346784591674805, 0.2925184369087219, 0.24372531473636627, 0.1977768987417221, 0.18844705820083618]
+accuracy: [0.721639096736908, 0.8865565061569214, 0.9103394150733948, 0.9283162355422974, 0.9303260445594788]
+val_loss: [1.0565263032913208, 1.3558917045593262, 1.8372691869735718, 1.7507872581481934, 2.4603967666625977]
+val_accuracy: [0.5, 0.5, 0.5, 0.5, 0.5]
+Test Loss: 1.058658480644226
+Test Accuracy: 0.5
+
+--------Neuer Programmstart:----------
+loss: [0.3805096745491028, 0.21845923364162445, 0.18204158544540405, 0.1800922006368637, 0.1466575264930725]
+accuracy: [0.8270432949066162, 0.9158106446266174, 0.9269763231277466, 0.9306610226631165, 0.9422733187675476]
+val_loss: [1.3877017498016357, 0.7530863881111145, 3.0787463188171387, 3.0790674686431885, 4.049576759338379]
+val_accuracy: [0.5, 0.5, 0.5, 0.5, 0.5]
+Test Loss: 1.393051028251648
+Test Accuracy: 0.5
+
+--------Neuer Programmstart:----------
+loss: [0.44270220398902893, 0.2053404301404953, 0.16687822341918945, 0.13736467063426971, 0.11784015595912933]
+accuracy: [0.7893032431602478, 0.9254131317138672, 0.9400401711463928, 0.9519875049591064, 0.9602501392364502]
+val_loss: [0.9942589998245239, 0.7275933027267456, 0.8741605281829834, 0.8926869034767151, 1.0941530466079712]
+val_accuracy: [0.5, 0.5, 0.5, 0.5, 0.5]
+Test Loss: 0.9940455555915833
+Test Accuracy: 0.5
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 9, 'layer3': 5, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 1.1046720743179321
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 9, 'layer3': 4, 'learning_rate': 0.001}
+Testing with params: {'epochs_list': 4, 'layer1': 12, 'layer2': 8, 'layer3': 6, 'learning_rate': 0.001}
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 8, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 2.576488733291626
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 8, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 2.1121792793273926
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 6, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 2.0004830360412598
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 6, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.7188919186592102
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 3.4890458583831787
+Testing with params: {'epochs_list': 4, 'layer1': 10, 'layer2': 4, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.7620569467544556
+Testing with params: {'epochs_list': 4, 'layer1': 6, 'layer2': 8, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.9106547236442566
+Testing with params: {'epochs_list': 4, 'layer1': 6, 'layer2': 8, 'layer3': 3, 'learning_rate': 0.001}
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 50, 'layer3': 20, 'learning_rate': 0.001}
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 50, 'layer3': 20, 'learning_rate': 0.001}
+Test Accuracy: 0.43888887763023376, Test Loss: 0.7158660292625427
+New best model with accuracy: 0.43888887763023376
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 50, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.7975966334342957
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 50, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 1.3062241077423096
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 4, 'layer3': 20, 'learning_rate': 0.001}
+Test Accuracy: 0.5199999809265137, Test Loss: 0.7098222970962524
+New best model with accuracy: 0.5199999809265137
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 4, 'layer3': 20, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 2.588169574737549
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 4, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 1.5915427207946777
+Testing with params: {'epochs_list': 2, 'layer1': 100, 'layer2': 4, 'layer3': 3, 'learning_rate': 0.001}
+Testing with params: {'epochs_list': 1, 'layer1': 4, 'layer2': 4, 'layer3': 3, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.694392204284668
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 1, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+Testing with params: {'epochs_list': 1, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.7030305862426758
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 1, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 1.2912036180496216
+New best model with accuracy: 0.5
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 1, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.0001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 1, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.0001}
+Test Accuracy: 0.4911110997200012, Test Loss: 0.6996046900749207
+New best model with accuracy: 0.4911110997200012
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 1, 'layer1': 10, 'layer2': 8, 'layer3': 4, 'learning_rate': 0.0001}
+Test Accuracy: 0.5, Test Loss: 1.4279531240463257
+New best model with accuracy: 0.5
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 10, 'layer1': 10, 'layer2': 8, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.4738888740539551, Test Loss: 0.6947005391120911
+New best model with accuracy: 0.4738888740539551
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 10, 'layer1': 20, 'layer2': 10, 'layer3': 8, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 20, 'layer2': 10, 'layer3': 8, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 10, 'layer2': 8, 'layer3': 6, 'learning_rate': 0.001}
+Test Accuracy: 0.4950000047683716, Test Loss: 0.6951140761375427
+New best model with accuracy: 0.4950000047683716
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 20, 'layer2': 8, 'layer3': 6, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 20, 'layer2': 8, 'layer3': 6, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.6943780779838562
+New best model with accuracy: 0.5
+Testing with params: {'epochs_list': 2, 'layer1': 20, 'layer2': 8, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.7694931626319885
+Testing with params: {'epochs_list': 2, 'layer1': 20, 'layer2': 4, 'layer3': 6, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 0.6937869787216187
+Testing with params: {'epochs_list': 2, 'layer1': 20, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 4, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 4, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 4, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 4, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 4, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.001}
+Test Accuracy: 0.5, Test Loss: 4.72029447555542
+New best model with accuracy: 0.5
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.01}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.01}
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.01}
+Test Accuracy: 0.7717026472091675, Test Loss: 0.5829448103904724
+New best model with accuracy: 0.7717026472091675
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6491357088088989
+New best model with accuracy: 0.6474820375442505
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6493409872055054
+New best model with accuracy: 0.6474820375442505
+--------Neuer Programmstart:--------
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6554198861122131
+New best model with accuracy: 0.6474820375442505
+Testing with params: {'epochs_list': 2, 'layer1': 4, 'layer2': 4, 'layer3': 4, 'learning_rate': 0.01}
+--------Neuer Programmstart:--------
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 120, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 7.9912872314453125
+New best model with accuracy: 0.6474820375442505
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 120, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 71.1724624633789
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 60, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 4.918294906616211
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 60, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6511391401290894
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 20, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 68.92110443115234
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 20, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6505664587020874
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 8, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 48.918601989746094
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 8, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6491366028785706
+Testing with params: {'attantion': False, 'epochs_list': 5, 'layer1': 120, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 65.46721649169922
+Testing with params: {'attantion': False, 'epochs_list': 5, 'layer1': 120, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6526177525520325
+Testing with params: {'attantion': False, 'epochs_list': 5, 'layer1': 60, 'learning_rate': 0.1}
+Test Accuracy: 0.6474820375442505, Test Loss: 163.1949462890625
+Testing with params: {'attantion': False, 'epochs_list': 5, 'layer1': 60, 'learning_rate': 0.01}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6535061597824097
+Testing with params: {'attantion': False, 'epochs_list': 5, 'layer1': 20, 'learning_rate': 0.1}
+--------Neuer Programmstart:--------
+Testing with params: {'attantion': True, 'epochs_list': 2, 'layer1': 10, 'learning_rate': 0.01, 'minus_layeranzahl': 0}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6500203609466553
+New best model with accuracy: 0.6474820375442505
+Testing with params: {'attantion': True, 'epochs_list': 2, 'layer1': 10, 'learning_rate': 0.01, 'minus_layeranzahl': -10}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6620880961418152
+Testing with params: {'attantion': True, 'epochs_list': 2, 'layer1': 10, 'learning_rate': 0.01, 'minus_layeranzahl': -1}
+Test Accuracy: 0.3525179922580719, Test Loss: 189.16580200195312
+Testing with params: {'attantion': False, 'epochs_list': 2, 'layer1': 10, 'learning_rate': 0.01, 'minus_layeranzahl': 0}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6495936512947083
+Testing with params: {'attantion': False, 'epochs_list': 2, 'layer1': 10, 'learning_rate': 0.01, 'minus_layeranzahl': -10}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6490008234977722
+Testing with params: {'attantion': False, 'epochs_list': 2, 'layer1': 10, 'learning_rate': 0.01, 'minus_layeranzahl': -1}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6493304371833801
+--------Neuer Programmstart:--------
+Testing with params: {'attantion': True, 'epochs_list': 5, 'layer1': 126, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.6474820375442505, Test Loss: 0.6514431834220886
+New best model with accuracy: 0.6474820375442505
+--------Neuer Programmstart:--------
+Testing with params: {'attantion': True, 'epochs_list': 2, 'layer1': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+--------Neuer Programmstart:--------
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6685899496078491
+New best model with accuracy: 0.648368775844574
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 10, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.6485914587974548, Test Loss: 1.4886064529418945
+New best model with accuracy: 0.6485914587974548
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 10, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 256, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.6477218270301819, Test Loss: 0.6959257125854492
+New best model with accuracy: 0.6477218270301819
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.5628297328948975, Test Loss: 0.8172980546951294
+New best model with accuracy: 0.5628297328948975
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 2, 'layer1': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.6647481918334961, Test Loss: 0.6809982061386108
+New best model with accuracy: 0.6647481918334961
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.7422282695770264
+New best model with accuracy: 0.648368775844574
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -5}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6551567912101746
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6502372026443481
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -5}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6595479249954224
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 10, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.7340874075889587
+Testing with params: {'Attention': True, 'epochs_list': 5, 'layer1': 10, 'learning_rate': 0.001, 'minus_layeranzahl': -5}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6509919166564941
+Testing with params: {'Attention': False, 'epochs_list': 5, 'layer1': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.859363853931427
+Testing with params: {'Attention': False, 'epochs_list': 5, 'layer1': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -5}
+Test Accuracy: 0.6274356842041016, Test Loss: 0.6612298488616943
+Testing with params: {'Attention': False, 'epochs_list': 5, 'layer1': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.7125086188316345
+Testing with params: {'Attention': False, 'epochs_list': 5, 'layer1': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -5}
+Test Accuracy: 0.648368775844574, Test Loss: 0.7067438960075378
+Testing with params: {'Attention': False, 'epochs_list': 5, 'layer1': 10, 'learning_rate': 0.001, 'minus_layeranzahl': -15}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6831819415092468
+Testing with params: {'Attention': False, 'epochs_list': 5, 'layer1': 10, 'learning_rate': 0.001, 'minus_layeranzahl': -5}
+Test Accuracy: 0.648368775844574, Test Loss: 0.7148414850234985
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6488296389579773
+New best model with accuracy: 0.648368775844574
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6488183736801147
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6537036895751953
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6502262949943542
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6497359871864319
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6514177918434143
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6498908400535583
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 1.6175673007965088
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6516624689102173
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6499243378639221
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6485621333122253
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6513339877128601
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6508460640907288
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6505876183509827
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6487131118774414
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 6.213981628417969
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6576893329620361
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 10, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6620362401008606
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.665489137172699
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6813976168632507
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 64, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6532816886901855
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6489665508270264
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6517038345336914
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 20, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6539992094039917
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.351631224155426, Test Loss: 0.7070813179016113
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6506946086883545
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 64, 'layer2': 4, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6670421361923218
+--------Neuer Programmstart:--------
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 128, 'learning_rate': 0.001, 'minus_layeranzahl': 0}
+Test Accuracy: 0.351631224155426, Test Loss: 1018.2847290039062
+New best model with accuracy: 0.351631224155426
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -30}
+Test Accuracy: 0.648368775844574, Test Loss: 0.6498816609382629
+New best model with accuracy: 0.648368775844574
+Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
+Test Accuracy: 0.648368775844574, Test Loss: 8.862357139587402
