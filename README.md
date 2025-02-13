@@ -4,6 +4,7 @@ Maschinelles Lernen zur Feuchte-Stressbestimmung bei Erdbeerkulturen mittels Wä
 
 In desem Repo befindet sich folgende Struktur:
 Masterarbeit_Bieger
+
 	-master -> enhält alle Datensätze und Bilder zu:
 		-CNN
 		-Yolo
