@@ -1,4 +1,4 @@
-#import tensorflow as tf
+import tensorflow as tf
 import os
 from keras.applications import ResNet50, ResNet101
 from keras.applications import EfficientNetB0
@@ -22,7 +22,7 @@ train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in ["Train", "Va
 batch_size = 32
 img_size = (192, 256)
 early_stopping_patience = 3
-plot=False
+plot=True
 
 
 aktuelle_zeit = datetime.now()

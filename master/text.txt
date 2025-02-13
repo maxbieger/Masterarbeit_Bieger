@@ -1,8 +1,0 @@
-text
-hallo
-Text geht 
-ordner geht nicht 
-Sophos ist das Problem
-test2
-test3
-test4

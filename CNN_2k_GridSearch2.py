@@ -214,7 +214,7 @@ augmentation = tf.keras.Sequential(
         fill_mode = 'reflect',
         interpolation = 'bilinear',
         seed = seed),
-        tf.keras.layers.RandomFlip(mode="horizontal_and_vertical"),  # Zufällige Spiegelung
+        tf.keras.layers.RandomFlip(mode="horizontal_and_vertical")  # Zufällige Spiegelung
     ]
 )
 

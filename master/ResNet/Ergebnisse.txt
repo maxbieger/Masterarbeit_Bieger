@@ -305,3 +305,15 @@ Test Accuracy: 0.648368775844574, Test Loss: 0.6498816609382629
 New best model with accuracy: 0.648368775844574
 Testing with params: {'Attention': True, 'epochs_list': 6, 'layer1': 4, 'layer2': 128, 'learning_rate': 0.001, 'minus_layeranzahl': -2}
 Test Accuracy: 0.648368775844574, Test Loss: 8.862357139587402
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
