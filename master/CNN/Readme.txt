@@ -125,8 +125,8 @@ Marktanalyse = Ja
 Zotat Format irgendetwas mit Zahlen nehmen
 
 Fragen Treffen 7.2.:
--Falsches gelernt? = Neue Pflanze
--Anstatt ResNet EfficientNetB0?
+-Falsches gelernt? = Neue Pflanze = nein
+-Anstatt ResNet EfficientNetB0? = nein ungenauer
 
 Nächste woche freitag um 11:00
 Am montag guckt er auf den code

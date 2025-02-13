@@ -36,7 +36,6 @@ if train:
     # print(results.maps[])  # Access mAP for IOU=0.5
     # print(results.mAP50_95)  # Access mAP for IOU=0.5:0.95
 
-
 if val:
     for i in range(Anzahl_Bilder):
         # 2. Testbild analysieren

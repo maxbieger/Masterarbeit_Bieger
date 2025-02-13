@@ -317,3 +317,8 @@ Test Accuracy: 0.648368775844574, Test Loss: 8.862357139587402
 --------Neuer Programmstart:ResNet2--------
 --------Neuer Programmstart:ResNet2--------
 --------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+
+
+
+neu

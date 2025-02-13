@@ -24,7 +24,6 @@ img_size = (192, 256)
 early_stopping_patience = 3
 plot=True
 
-
 aktuelle_zeit = datetime.now()
 model_save_path = fr'master\ResNet\ResNet_model_{aktuelle_zeit.strftime("%d.%m.%Y")+"_"+aktuelle_zeit.strftime("%H:%M:%S")}.h5'
 
