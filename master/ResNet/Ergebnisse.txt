@@ -319,6 +319,104 @@ Test Accuracy: 0.648368775844574, Test Loss: 8.862357139587402
 --------Neuer Programmstart:ResNet2--------
 --------Neuer Programmstart:ResNet2--------
 
-
-
-neu
+Neues ResNet
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:15:48
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:22:21
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:26:01
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:26:49
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:35:56
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:47:35
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:49:50
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:51:30
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:54:22
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:56:07
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:57:15
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------13.02.2025_17:58:06
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 6, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'learning_rate': 0.001, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'early_stopping_patience': 3}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'learning_rate': 0.001, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'early_stopping_patience': 3}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, 'layer2': 4, 'learning_rate': 0.001}
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------

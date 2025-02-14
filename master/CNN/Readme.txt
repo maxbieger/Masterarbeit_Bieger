@@ -145,3 +145,9 @@ git Push:
 ->git push origin main
 
 
+
+Feedback 14.2.:
+-Git
+-ResNet
+-Prototyp anfangen
+-Anfangen schreiben
