@@ -15,25 +15,13 @@ from keras.optimizers import Adam
 optimizer = Adam(learning_rate=0.001, decay=1e-4)  # Simuliert AdamW
 seed = 123
 
-#from tensorflow.keras import mixed_precision
-#tf.config.optimizer.set_jit(True)  # XLA aktivieren
-#tf.data.experimental.enable_debug_mode()
-#mixed_precision.set_global_policy('mixed_float16')
-
 
 Ergebnisse_pfad = r'master\ResNet\Ergebnisse.txt'
-data_dir = r'master\ResNet\Dataset_ResNet_mini_a'
+data_dir = r'master\ResNet\Dataset_ResNet_a'
 train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in [
     "Train", "Validation", "Test"]]
 
-# Notiz Grid Search funktioniert für Resnet nicht
 
-# Hyperparameter
-batch_size = 16
-img_size = (192, 256)
-early_stopping_patience = 5
-plot = True
-learning_rate = 0.001
 # Abbruchbedingungen: Die Zahlen-Kombination muss groß genug sein: 
 # Epochen=3 => (Layer1=32 Layer2=16) geht
 # Epochen=3 => (Layer1=32 Layer2=4) geht nicht
@@ -56,13 +44,18 @@ learning_rate = 0.001
 # Epochen=5 => (Layer1=16 Layer2=8) 200, 50V2, l2(0.05), Dropout hoch, geht 61% acc
 # Epochen=10 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout hoch, ResNet_a, noch machen
 
-
 #Test dauer = 1min
-epochen = 10 # Mindestens >4
-layer1 = 10 # Abbruch <10
-layer2 = 8 # Abbruch <10
+epochen = 10
+layer1 = 10
+layer2 = 8 
 frozen_layers = 185
 
+# Hyperparameter: Notiz: Grid Search funktioniert für Resnet nicht
+batch_size = 16
+img_size = (192, 256)
+early_stopping_patience = 5
+plot = True
+learning_rate = 0.001
 
 #lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=0.001, decay_steps=1000, decay_rate=0.9)
 #optimizer = Adam(learning_rate=lr_schedule)
