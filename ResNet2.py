@@ -9,31 +9,65 @@ from keras.regularizers import l2
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 import tensorflow as tf
 import os
-from keras.applications import ResNet101
+from keras.applications import ResNet101, ResNet50, ResNet152, ResNet50V2, ResNet101V2, ResNet152V2
 from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import Adam
 optimizer = Adam(learning_rate=0.001, decay=1e-4)  # Simuliert AdamW
 seed = 123
 
-# Notiz Grid Search funktioniert für Resnet nicht
+#from tensorflow.keras import mixed_precision
+#tf.config.optimizer.set_jit(True)  # XLA aktivieren
+#tf.data.experimental.enable_debug_mode()
+#mixed_precision.set_global_policy('mixed_float16')
+
 
 Ergebnisse_pfad = r'master\ResNet\Ergebnisse.txt'
-data_dir = r'master\ResNet\Dataset_ResNet_mini'
+data_dir = r'master\ResNet\Dataset_ResNet_mini_a'
 train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in [
     "Train", "Validation", "Test"]]
 
+# Notiz Grid Search funktioniert für Resnet nicht
+
 # Hyperparameter
-batch_size = 32
+batch_size = 16
 img_size = (192, 256)
-early_stopping_patience = 3
+early_stopping_patience = 5
 plot = True
 learning_rate = 0.001
-epochen = 1
-layer1 = 16
-layer2 = 8
+# Abbruchbedingungen: Die Zahlen-Kombination muss groß genug sein: 
+# Epochen=3 => (Layer1=32 Layer2=16) geht
+# Epochen=3 => (Layer1=32 Layer2=4) geht nicht
+# Epochen=10 => (Layer1=8 Layer2=4) geht nicht
+# Epochen=20 => (Layer1=8 Layer2=4) geht nicht
+# Epochen=20 => (Layer1=8 Layer2=8) geht 
+# Epochen=10 => (Layer1=32 Layer2=32) geht
+# Epochen=100 => (Layer1=6 Layer2=4) geht nicht
+# Epochen=200 => (Layer1=6 Layer2=4) geht nicht
+# Epochen=200 => (Layer1=6 Layer2=6) geht nicht
+# Epochen=100 => (Layer1=8 Layer2=6) geht nicht
+# Epochen=100 => (Layer1=10 Layer2=6) geht nicht
+# Epochen=100 => (Layer1=10 Layer2=8) geht
+# Epochen=5 => (Layer1=16 Layer2=8) geht
+# Epochen=5 => (Layer1=12 Layer2=4) geht nicht
+# Epochen=15 => (Layer1=12 Layer2=4) geht nicht
+# Epochen=5 => (Layer1=16 Layer2=8) 170, geht 
+# Epochen=5 => (Layer1=16 Layer2=8) 170, 50V2, geht über 50% acc
+# Epochen=5 => (Layer1=16 Layer2=8) 200, 50V2, cbam_block, l2(0.05), Dropout hoch, geht nicht
+# Epochen=5 => (Layer1=16 Layer2=8) 200, 50V2, l2(0.05), Dropout hoch, geht 61% acc
+# Epochen=10 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout hoch, ResNet_a, noch machen
 
-aktuelle_zeit = datetime.now()
-model_save_path = fr'master\ResNet\ResNet_model_{aktuelle_zeit.strftime("%d.%m.%Y")+"_"+aktuelle_zeit.strftime("%H:%M:%S")}.h5'
+
+#Test dauer = 1min
+epochen = 10 # Mindestens >4
+layer1 = 10 # Abbruch <10
+layer2 = 8 # Abbruch <10
+frozen_layers = 185
+
+
+#lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=0.001, decay_steps=1000, decay_rate=0.9)
+#optimizer = Adam(learning_rate=lr_schedule)
+
+model_save_path = fr'master\ResNet'
 
 
 def InErgebnisseDateiSichern(text):
@@ -43,26 +77,50 @@ def InErgebnisseDateiSichern(text):
     except Exception as e:
         print(f"Ein Fehler ist aufgetreten: {e}")
 
+aktuelle_zeit = datetime.now()
+InErgebnisseDateiSichern(f"ResNet2--------Neuer Programmstart:--------{aktuelle_zeit.strftime('%d-%m-%Y')}_{aktuelle_zeit.strftime('%H-%M-%S')}")
+InErgebnisseDateiSichern(f"Learning Rate: {learning_rate}, epochen: {epochen}, layer1: {layer1}, layer2: {layer2}, batch_size: {batch_size}, early_stopping_patience: {early_stopping_patience}")
 
-InErgebnisseDateiSichern("--------Neuer Programmstart:ResNet2--------")
 # Augmentation
 augmentation = tf.keras.Sequential([
     tf.keras.layers.RandomRotation(0.3),
-    tf.keras.layers.RandomFlip("horizontal_and_vertical")
-    # ,tf.keras.layers.RandomZoom(0.2)
+    tf.keras.layers.RandomFlip("horizontal_and_vertical"),
+    tf.keras.layers.RandomZoom(0.2),
+    tf.keras.layers.RandomTranslation(height_factor=0.2, width_factor=0.2)
 ])
 scaler = Rescaling(1./255)
 
 # daten
+# train_generator = tf.keras.utils.image_dataset_from_directory(
+#     train_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
+# ).map(lambda x, y: (scaler(x), y)).map(lambda x, y: (augmentation(x), y))
+# val_generator = tf.keras.utils.image_dataset_from_directory(
+#     val_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
+# ).map(lambda x, y: (scaler(x), y))
+# test_generator = tf.keras.utils.image_dataset_from_directory(
+#     test_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical", shuffle=False
+# ).map(lambda x, y: (scaler(x), y))
+
+AUTOTUNE = tf.data.AUTOTUNE
+
 train_generator = tf.keras.utils.image_dataset_from_directory(
     train_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
-).map(lambda x, y: (scaler(x), y)).map(lambda x, y: (augmentation(x), y))
+).map(lambda x, y: (scaler(x), y)).map(lambda x, y: (augmentation(x), y)) \
+  .cache() \
+  .prefetch(buffer_size=AUTOTUNE)
+
 val_generator = tf.keras.utils.image_dataset_from_directory(
     val_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
-).map(lambda x, y: (scaler(x), y))
+).map(lambda x, y: (scaler(x), y)) \
+  .cache() \
+  .prefetch(buffer_size=AUTOTUNE)
+
 test_generator = tf.keras.utils.image_dataset_from_directory(
     test_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical", shuffle=False
-).map(lambda x, y: (scaler(x), y))
+).map(lambda x, y: (scaler(x), y)) \
+  .cache() \
+  .prefetch(buffer_size=AUTOTUNE)
+
 # SE-Block verbessert & CBAM als Alternative
 # def squeeze_excite_block(input_tensor, ratio=8):
 #     filters = input_tensor.shape[-1]
@@ -78,7 +136,6 @@ def squeeze_excite_block(input_tensor, ratio=8):
     se = Dense(filters // ratio, activation="relu")(input_tensor)
     se = Dense(filters, activation="sigmoid")(se)
     return Multiply()([input_tensor, se])
-
 
 def cbam_block(input_tensor, ratio=8):
     filters = input_tensor.shape[-1]
@@ -102,23 +159,26 @@ def cbam_block(input_tensor, ratio=8):
 
 
 # Lade Basis-ResNet101 (mit eingefrorenen frühen Schichten)
-base_model = ResNet101(
+base_model = ResNet50V2(
     weights="imagenet", include_top=False, input_shape=(192, 256, 3))
-for layer in base_model.layers[:150]:  # Nur letzte 50 Schichten trainierbar
+for layer in base_model.layers[:frozen_layers]:  # Nur letzte 50 Schichten trainierbar
     layer.trainable = False
 x = base_model.output
 x = GlobalAveragePooling2D()(x)  # Feature-Maps auf globale Merkmale reduzieren
 # Dense-Schichten mit BatchNorm & Dropout
-x = Dense(layer1, kernel_regularizer=l2(0.01))(x)
+x = Dense(layer1, kernel_regularizer=l2(0.05))(x)
+x = BatchNormalization()(x)
+x = tf.keras.layers.Activation("relu")(x)
+x = Dropout(0.6)(x)
+x = Dense(layer2, kernel_regularizer=l2(0.05))(x)
 x = BatchNormalization()(x)
 x = tf.keras.layers.Activation("relu")(x)
 x = Dropout(0.5)(x)
-x = Dense(layer2, kernel_regularizer=l2(0.01))(x)
-x = BatchNormalization()(x)
-x = tf.keras.layers.Activation("relu")(x)
-x = Dropout(0.4)(x)
+
 # SE-Block direkt vor dem Output-Layer
 x = squeeze_excite_block(x)
+#x = cbam_block(x)
+
 # Output-Layer mit Softmax für Klassifikation
 output = Dense(2, activation="softmax")(x)
 model = tf.keras.Model(inputs=base_model.input, outputs=output)
@@ -131,13 +191,33 @@ early_stopping = EarlyStopping(
     monitor="val_accuracy", patience=early_stopping_patience, restore_best_weights=True)
 checkpoint = ModelCheckpoint(
     "best_model.h5", save_best_only=True, monitor="val_loss", mode="min")
+#TODO
+# reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(
+#     monitor="val_loss",  # oder "val_accuracy" je nach Ziel
+#     factor=0.5,  # Reduziert die Lernrate um 50%
+#     patience=2,  # Nach 2 Epochen ohne Verbesserung wird reduziert
+#     min_lr=1e-6,  # Mindestgrenze für die Lernrate
+#     verbose=1  # Zeigt Infos über Änderungen in der Konsole
+# )
+
 # Trainieren
-history = model.fit(train_generator, validation_data=val_generator,
-                    epochs=epochen, callbacks=[early_stopping, checkpoint])
+history = model.fit(
+    train_generator,
+    validation_data=val_generator,
+    epochs=epochen,
+    callbacks=[early_stopping, checkpoint]#, reduce_lr
+)
+
 # Evaluieren
 test_loss, test_acc = model.evaluate(test_generator)
 print(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
+InErgebnisseDateiSichern(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 
+
+
+# .h5 löschen
+if os.path.exists("best_model.h5"):
+    os.remove("best_model.h5")
 
 if plot:
     paper_color = '#EEF6FF'
@@ -194,7 +274,7 @@ if plot:
     fig.add_trace(val_acc, row=1, col=2)
 
     fig.update_layout(
-        title={'text': f"Test Acc: {np.round(test_acc * 100, 2)}%",
+        title={'text': f"Learning Rate: {learning_rate}, epochen: {epochen}, layer1: {layer1}, layer2: {layer2}, batch_size: {batch_size}, e.s.patience: {early_stopping_patience} <br>Test Acc: {np.round(test_acc * 100, 2)}%",
                'x': 0.025, 'xanchor': 'left', 'font': {'size': 14}},
         margin=dict(t=100),
         plot_bgcolor=bg_color, paper_bgcolor=paper_color,
@@ -211,4 +291,4 @@ if plot:
     fig.show()
     aktuelle_zeit = datetime.now()
     fig.write_html(os.path.join(
-        model_save_path, f'ResNet_model_{aktuelle_zeit.strftime("%d.%m.%Y")+"_"+aktuelle_zeit.strftime("%H:%M:%S")}.html'))
+        model_save_path, fr'ResNet_model_{aktuelle_zeit.strftime("%d-%m-%Y")+"_"+aktuelle_zeit.strftime("%H-%M-%S")}.html'))

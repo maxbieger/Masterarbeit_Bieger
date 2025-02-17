@@ -420,3 +420,128 @@ Testing with params: {'early_stopping_patience': 3, 'epochen': 4, 'layer1': 8, '
 --------Neuer Programmstart:ResNet2--------
 --------Neuer Programmstart:ResNet2--------
 --------Neuer Programmstart:ResNet2--------
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 1, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 1, layer1: 8, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 1, layer1: 8, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 3, layer1: 8, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 3, layer1: 8, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 1, layer1: 16, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 2, layer1: 16, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 2, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 4, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 4, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 2, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 2, layer1: 32, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 3, layer1: 32, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 4, layer1: 32, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 32, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 3, layer1: 32, layer2: 16, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 8, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 20, layer1: 8, layer2: 4, batch_size: 16, early_stopping_patience: 3
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 20, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 3
+Test Accuracy: 0.6484, Test Loss: 138240.9062
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 20, layer1: 32, layer2: 32, batch_size: 16, early_stopping_patience: 3
+Test Accuracy: 0.6484, Test Loss: 23862.7227
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 32, layer2: 32, batch_size: 16, early_stopping_patience: 3
+Test Accuracy: 0.6484, Test Loss: 266360.2812
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 100, layer1: 6, layer2: 4, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 100, layer1: 6, layer2: 4, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 100, layer1: 6, layer2: 4, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 200, layer1: 6, layer2: 4, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 200, layer1: 6, layer2: 6, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 100, layer1: 8, layer2: 6, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 100, layer1: 10, layer2: 6, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 100, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.5000, Test Loss: 2505.7402
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 50, layer1: 64, layer2: 10, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.5000, Test Loss: 934410.1875
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.5000, Test Loss: 0.8464
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.5000, Test Loss: 0.8030
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 12, layer2: 4, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 12, layer2: 4, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 5
+
+
+Bis jetzt bestes Model
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.5230, Test Loss: 0.8377
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 5, layer1: 16, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.6136, Test Loss: 0.8535
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 15, layer1: 12, layer2: 6, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 20, layer1: 12, layer2: 6, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 20, layer1: 12, layer2: 8, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 20, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 5
+--------Neuer Programmstart:ResNet2--------
+Learning Rate: 0.001, epochen: 10, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.6382, Test Loss: 0.9363
+ResNet2--------Neuer Programmstart:--------17-02-2025_10-23-38
+Learning Rate: 0.001, epochen: 10, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 5

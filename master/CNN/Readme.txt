@@ -147,7 +147,23 @@ git Push:
 
 
 Feedback 14.2.:
--Git
--ResNet
--Prototyp anfangen
--Anfangen schreiben
+-yolo Augmentierung einfügen, epochen=100
+-schreiben anfangen
+-anmeldung machen
+-ResNet nur mit 1-2Sätzen im fazit erwähnen
+-Nächstes Metting nächsten Freitag 11:00 nur mit Gültas
+-Wieder link per Email schicken
+
+
+Fragen:
+-Folgende Zusatzfächer sollen auf meinem Zeugnis augegeben werden
+-Thema genau schreiben
+-etwa 70 Seiten à 30 Zeilen (exklusive Bilder und
+Tabellen
+-21 Wochen
+-Antrag auf Zulassung zur Masterarbeit sind folgende weiteren
+Unterlagen beizufügen:
+a) eine Erklärung darüber, welche Module als Wahlpflichtmodule festgelegt werden
+b) eine Erklärung darüber, ob die Masterarbeit abweichend von § 30 Absatz 4 RPO in englischer Sprache 
+- Kolloquium: mindestens 30 und maximal 60 Minuten
+- Wo Masterarbeit abgeben, in welcher Form

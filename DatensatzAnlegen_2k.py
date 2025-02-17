@@ -5,26 +5,26 @@ import time
 
 #--------------------Variable Eingabe--------------------------
 
-DatensatzName= "Dataset_Restnet_mini"
-modell = "CNN"# "Yolo","ResNet"
+DatensatzName= "Dataset_ResNet_a"
+modell = "ResNet"# "Yolo","ResNet"
 
 # Verteilung in Prozent (z.B. 30%, 50%, 20%)
 #Wichtig genug validation mind 30%
-verteilung = [0.65, 0.05, 0.3] #Test, Train, Validation
+verteilung = [0.3, 0.4, 0.3] #Test, Train, Validation
 MaxAbweichungGesamt = 0.02
-Verteilung_durch_duplizieren_ausgleichen = False #TODO Passe noch die Befehle in Zeile 155 an, im augenblick wird Healthy an Dry angepasst
+Verteilung_durch_duplizieren_ausgleichen = True #TODO Passe noch die Befehle in Zeile 155 an, im augenblick wird Healthy an Dry angepasst
 # Wichtig: Die Prozentpunkte enspricht der batch größe welche kopiert wird, bei unter 100 Bilder erhält Validation nur den Rest
 
 # Variablen mit Pfaden zu den Eingabe- und Ausgangsordnern
 #Dry
-eingabe_ordner1 = fr"master\{modell}\unter 30 prozent feuchtigkeit"
+eingabe_ordner1 = fr"master\captured_images\unter 30 prozent feuchtigkeit"
 #SuperDry
-eingabe_ordner2 = fr"master\{modell}\unter 15 prozent feuchtigkeit"
+eingabe_ordner2 = fr"master\captured_images\unter 15 prozent feuchtigkeit"
 #Healty
-eingabe_ordner3 =  fr"master\{modell}\normal"
+eingabe_ordner3 =  fr"master\captured_images\normal"
 
 # Wo soll Datensatz erstellt werden
-ausgangs_ordner_basis = fr"master\{modell}"#captured_images"
+ausgangs_ordner_basis = fr"master\{modell}"
 
 #--------------------------------------------------------------
 
