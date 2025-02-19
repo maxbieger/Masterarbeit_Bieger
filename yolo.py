@@ -2,7 +2,6 @@ from ultralytics import YOLO
 import os
 import random
 from PIL import Image
-import albumentations as A
 import cv2
 import numpy as np
 
@@ -13,6 +12,7 @@ val = False
 # Datensatz & Ausgabe-Verzeichnis anpassen
 DatensatzName = "Dataset_yolo2"
 dataset_path = fr'master\Yolo\{DatensatzName}'
+file_path = fr'master\Yolo'
 output_dir = fr'master\Yolo\TrainingResults'  # Speichert Modell & Ergebnisse hier
 val_output_dir = os.path.join(output_dir, "Validierung")  # Speichert Validierungsergebnisse
 os.makedirs(output_dir, exist_ok=True)
@@ -22,45 +22,56 @@ os.makedirs(val_output_dir, exist_ok=True)
 apply_augmentation = True
 
 # ========================== AUGMENTIERUNG ==========================
-def apply_augmentation_to_image(image_path):
+import cv2
+import numpy as np
+import random
+from PIL import Image
+
+def augment_image_opencv(image_path):
     image = cv2.imread(image_path)
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Konvertiere zu RGB
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Konvertiere zu RGB für PIL
 
-    augmentations = A.Compose([
-        A.HorizontalFlip(p=0.5),  # Spiegelung
-        A.Rotate(limit=15, p=0.5, border_mode=cv2.BORDER_REFLECT_101),  # Randreflexion
-        A.GaussNoise(var_limit=(5, 30), p=0.2)  # Leichtes Rauschen mit 20% Wahrscheinlichkeit
-    ])
+    if random.random() > 0.5:
+        image = cv2.flip(image, 1)
 
-    augmented = augmentations(image=image)["image"]
-    return augmented  # Gibt das augmentierte Bild zurück
+    angle = random.uniform(-25, 25)  # Drehen 
+    h, w = image.shape[:2]
+    center = (w // 2, h // 2)
+    rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
+    image = cv2.warpAffine(image, rotation_matrix, (w, h), borderMode=cv2.BORDER_REFLECT_101)
+
+    if random.random() < 0.2:
+        noise = np.random.normal(0, 1, image.shape).astype(np.uint8)  # Leichtes Rauschen
+        image = cv2.add(image, noise)
+
+    return image
 
 # ========================== TRAINING ==========================
 if train:
-    # 1. YOLO-Modell laden (vortrainiertes Modell als Basis)
+    # YOLO-Modell laden
     model = YOLO("yolov8m.pt")  
 
-    # 2. Training starten mit interner Augmentierung (Bilder werden NICHT gespeichert)
+    # Training
     model.train(
-        data=os.path.join(dataset_path, "data.yaml"),  
+        data=os.path.join(file_path, "data.yaml"),  
         epochs=5,                 
         imgsz=192,                 
         batch=16,                  
         workers=4,                 
         save=True,
-        project=output_dir,  # Speicherpfad für Ergebnisse
+        project=output_dir, 
         name="yolo_experiment",
-        augment=apply_augmentation  # Aktiviert Augmentierung nur während des Trainings
+        augment=apply_augmentation 
     )
 
-    # 3. Modellvalidierung nach Training
+    # validierung
     results = model.val()
     print("Training abgeschlossen. Ergebnisse:")
     print(results)
 
 # ========================== VALIDIERUNG ==========================
-if val:
-    # 1. Modell aus dem gewählten Speicherpfad laden
+if val: #TODO not finished yet
+    # Modell aus dem gewählten Speicherpfad laden
     best_model_path = os.path.join(output_dir, "yolo_experiment", "weights", "best.pt")
     model = YOLO(best_model_path)
 

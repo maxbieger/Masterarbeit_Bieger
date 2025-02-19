@@ -163,6 +163,7 @@ Fragen:
 -etwa 70 Seiten à 30 Zeilen (exklusive Bilder und
 Tabellen
 -21 Wochen
+-Englische fachbegriffe JANein
 -Antrag auf Zulassung zur Masterarbeit sind folgende weiteren
 Unterlagen beizufügen:
 a) eine Erklärung darüber, welche Module als Wahlpflichtmodule festgelegt werden
