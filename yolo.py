@@ -2,100 +2,92 @@ from ultralytics import YOLO
 import os
 import random
 from PIL import Image
+import albumentations as A
+import cv2
+import numpy as np
 
+# ========================== KONFIGURATION ==========================
 train = True
-val=True
+val = False
+
+# Datensatz & Ausgabe-Verzeichnis anpassen
 DatensatzName = "Dataset_yolo2"
-image_dir = fr'master\Yolo\{DatensatzName}\Train'
-data_dir = r'master\Yolo'
+dataset_path = fr'master\Yolo\{DatensatzName}'
+output_dir = fr'master\Yolo\TrainingResults'  # Speichert Modell & Ergebnisse hier
+val_output_dir = os.path.join(output_dir, "Validierung")  # Speichert Validierungsergebnisse
+os.makedirs(output_dir, exist_ok=True)
+os.makedirs(val_output_dir, exist_ok=True)
 
-#Validation
-model = YOLO(r"C:\Users\maxbi\runs\detect\train\weights\best.pt")
-Anzahl_Bilder = 10
-image_path = r"C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\Dataset_yolo2\Test"
-        
+# Augmentierung aktivieren/deaktivieren
+apply_augmentation = True
+
+# ========================== AUGMENTIERUNG ==========================
+def apply_augmentation_to_image(image_path):
+    image = cv2.imread(image_path)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Konvertiere zu RGB
+
+    augmentations = A.Compose([
+        A.HorizontalFlip(p=0.5),  # Spiegelung
+        A.Rotate(limit=15, p=0.5, border_mode=cv2.BORDER_REFLECT_101),  # Randreflexion
+        A.GaussNoise(var_limit=(5, 30), p=0.2)  # Leichtes Rauschen mit 20% Wahrscheinlichkeit
+    ])
+
+    augmented = augmentations(image=image)["image"]
+    return augmented  # Gibt das augmentierte Bild zurück
+
+# ========================== TRAINING ==========================
 if train:
-    # 1. Modell laden (vortrainiertes YOLOv8-Modell)
-    model = YOLO("yolov8m.pt")  # yolov8m.pt = keine echtzeit aber genauer, sonst yolov8n.pt
+    # 1. YOLO-Modell laden (vortrainiertes Modell als Basis)
+    model = YOLO("yolov8m.pt")  
 
-    # 2. Training starten
-    #results = model.train(data=r"C:\Users\maxbi\OneDrive\Dokumente\Masterstudiengang\Masterarbeit\Gültas\master\Yolo\data.yaml", epochs=100, imgsz=640)
+    # 2. Training starten mit interner Augmentierung (Bilder werden NICHT gespeichert)
     model.train(
-        data=r'master\Yolo\data.yaml',
-        epochs=50,                 # Anzahl der Epochen
-        imgsz=192,                 # Bildgröße
-        batch=16,                  # Batchgröße
-        workers=4                  # Threads
+        data=os.path.join(dataset_path, "data.yaml"),  
+        epochs=5,                 
+        imgsz=192,                 
+        batch=16,                  
+        workers=4,                 
+        save=True,
+        project=output_dir,  # Speicherpfad für Ergebnisse
+        name="yolo_experiment",
+        augment=apply_augmentation  # Aktiviert Augmentierung nur während des Trainings
     )
 
+    # 3. Modellvalidierung nach Training
     results = model.val()
-    #print(results)  # Zeigt Präzision, Recall und mAP an
-
-    # 4. Genauigkeit ausgeben
+    print("Training abgeschlossen. Ergebnisse:")
     print(results)
-    # print(results.maps[])  # Access mAP for IOU=0.5
-    # print(results.mAP50_95)  # Access mAP for IOU=0.5:0.95
 
+# ========================== VALIDIERUNG ==========================
 if val:
-    for i in range(Anzahl_Bilder):
-        # 2. Testbild analysieren
-        #image_path = os.path.join(data_dir,DatensatzName, "Test")
-        jpg_files = [file for file in os.listdir(image_path) if file.endswith('.jpg')]
+    # 1. Modell aus dem gewählten Speicherpfad laden
+    best_model_path = os.path.join(output_dir, "yolo_experiment", "weights", "best.pt")
+    model = YOLO(best_model_path)
+
+    # 2. Anzahl der Testbilder festlegen
+    Anzahl_Bilder = 10
+    test_image_dir = os.path.join(dataset_path, "Test")
+
+    jpg_files = [f for f in os.listdir(test_image_dir) if f.endswith(".jpg")]
+
+    for i in range(min(Anzahl_Bilder, len(jpg_files))):
         random_image = random.choice(jpg_files)
-        results = model(os.path.join(image_path, random_image), save=True, save_dir=data_dir)
+        image_path = os.path.join(test_image_dir, random_image)
 
-        # Access the annotated image as a NumPy array
-        annotated_image = results[0].plot()  # Returns the image with annotations
-        annotated_image = Image.fromarray(annotated_image)  # Convert to a PIL Image
+        results = model(image_path, save=True, save_dir=val_output_dir)
 
-        # Save it to a file
-        annotated_image.save(f"annotated_image_{i}.jpg")
+        # Annotiertes Bild speichern
+        annotated_image = results[0].plot()
+        annotated_image = Image.fromarray(annotated_image)
+        annotated_image.save(os.path.join(val_output_dir, f"annotated_image_{i}.jpg"))
 
+        print(f"Bild {i+1} analysiert: {random_image}")
 
-        
-        # 3. Validierung des Modells auf dem Testdatensatz
-        results = model.val(data=image_path)  # Testdatensatz muss in der .yaml-Datei definiert sein
+    # 3. Validierungsergebnisse ausgeben
+    val_results = model.val(data=test_image_dir)
+    print("Validierungsergebnisse:")
+    print(f"mAP50: {val_results.mAP50}")
+    print(f"mAP50-95: {val_results.mAP50_95}")
+    print(val_results)
 
-        # 4. Ergebnisse ausgeben
-        print("Validierungsergebnisse:")
-        print(f"mAP50: {results.mAP50}")  # Mean Average Precision bei IOU=0.5
-        print(f"mAP50-95: {results.mAP50_95}")  # Mean Average Precision bei IOU=0.5:0.95
-        print(results)
-
-    print('Done')
-    ###############
-
-    
-
-    # val_dir = os.path.join(data_dir, DatensatzName, "Test")  # Verzeichnis mit Validierungsbildern
-
-    # # 1. Modell laden
-    # model = YOLO(r"C:\Users\maxbi\runs\detect\train15\weights\best.pt")
-
-    # # 2. Alle Bilder im Validierungsverzeichnis analysieren
-    # jpg_files = [file for file in os.listdir(val_dir) if file.endswith('.jpg')]
-    # total_images = len(jpg_files)
-
-    # if total_images == 0:
-    #     print("Keine Bilder im Validierungsverzeichnis gefunden.")
-    # else:
-    #     correct_predictions = 0
-
-    #     for img_file in jpg_files:
-    #         # Bildpfad
-    #         img_path = os.path.join(val_dir, img_file)
-
-    #         # Vorhersage durchführen
-    #         results = model(img_path)
-
-    #         # Ergebnisse auswerten
-    #         for result in results:
-    #             # Hier kannst du die Logik implementieren, um die Korrektheit zu bestimmen.
-    #             # Beispiel: Anzahl der erkannten Objekte oder Vergleich mit Ground Truth.
-    #             # In diesem Beispiel wird eine zufällige Bedingung verwendet:
-    #             if len(result.boxes) > 0:  # Annahme: Ein korrektes Bild hat mindestens eine erkannte Box
-    #                 correct_predictions += 1
-
-    #     # 3. Genauigkeit berechnen
-    #     accuracy = (correct_predictions / total_images) * 100
-    #     print(f"Validierungs-Genauigkeit: {accuracy:.2f}%")
+print("Prozess abgeschlossen.")

@@ -545,3 +545,21 @@ Learning Rate: 0.001, epochen: 10, layer1: 10, layer2: 8, batch_size: 16, early_
 Test Accuracy: 0.6382, Test Loss: 0.9363
 ResNet2--------Neuer Programmstart:--------17-02-2025_10-23-38
 Learning Rate: 0.001, epochen: 10, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 5
+ResNet2--------Neuer Programmstart:--------17-02-2025_12-18-47
+Learning Rate: 0.001, epochen: 10, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 5
+Test Accuracy: 0.7320, Test Loss: 0.6808
+ResNet2--------Neuer Programmstart:--------17-02-2025_15-45-00
+Learning Rate: 0.001, epochen: 10, layer1: 10, layer2: 8, batch_size: 32, early_stopping_patience: 8
+Test Accuracy: 0.8494, Test Loss: 0.4859
+ResNet2--------Neuer Programmstart:--------17-02-2025_18-08-35
+Learning Rate: 0.001, epochen: 5, layer1: 10, layer2: 8, batch_size: 32, early_stopping_patience: 8
+Test Accuracy: 0.6322, Test Loss: 0.8140
+ResNet2--------Neuer Programmstart:--------17-02-2025_22-38-10
+Learning Rate: 0.001, epochen: 10, layer1: 12, layer2: 8, batch_size: 32, early_stopping_patience: 8
+Test Accuracy: 0.7896, Test Loss: 0.7213
+ResNet2--------Neuer Programmstart:--------18-02-2025_01-01-06
+Learning Rate: 0.001, epochen: 10, layer1: 12, layer2: 8, batch_size: 32, early_stopping_patience: 8
+Test Accuracy: 0.7757, Test Loss: 0.8639
+ResNet2--------Neuer Programmstart:--------18-02-2025_09-32-03
+Learning Rate: 0.001, epochen: 50, layer1: 10, layer2: 8, batch_size: 32, early_stopping_patience: 8
+Test Accuracy: 0.9470, Test Loss: 0.4550

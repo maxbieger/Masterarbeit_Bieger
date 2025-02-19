@@ -158,6 +158,8 @@ Feedback 14.2.:
 Fragen:
 -Folgende Zusatzfächer sollen auf meinem Zeugnis augegeben werden
 -Thema genau schreiben
+-ResNet = 94%
+-Yolo =
 -etwa 70 Seiten à 30 Zeilen (exklusive Bilder und
 Tabellen
 -21 Wochen

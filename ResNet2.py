@@ -42,18 +42,23 @@ train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in [
 # Epochen=5 => (Layer1=16 Layer2=8) 170, 50V2, geht über 50% acc
 # Epochen=5 => (Layer1=16 Layer2=8) 200, 50V2, cbam_block, l2(0.05), Dropout hoch, geht nicht
 # Epochen=5 => (Layer1=16 Layer2=8) 200, 50V2, l2(0.05), Dropout hoch, geht 61% acc
-# Epochen=10 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout hoch, ResNet_a, noch machen
-
+# Epochen=10 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout hoch, ResNet_a, 71%
+# Epochen=10 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 84%
+# Epochen=5 => (Layer1=10 Layer2=8) 170, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 64%
+# Epochen=10 => (Layer1=12 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 78%
+# # Epochen=10 => (Layer1=12 Layer2=8) 185, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 77%
+# Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 94%
+# Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, Nochmal model speichern
 #Test dauer = 1min
-epochen = 10
+epochen = 50
 layer1 = 10
 layer2 = 8 
-frozen_layers = 185
+frozen_layers = 180
 
 # Hyperparameter: Notiz: Grid Search funktioniert für Resnet nicht
-batch_size = 16
+batch_size = 32
 img_size = (192, 256)
-early_stopping_patience = 5
+early_stopping_patience = 8
 plot = True
 learning_rate = 0.001
 
@@ -162,11 +167,11 @@ x = GlobalAveragePooling2D()(x)  # Feature-Maps auf globale Merkmale reduzieren
 x = Dense(layer1, kernel_regularizer=l2(0.05))(x)
 x = BatchNormalization()(x)
 x = tf.keras.layers.Activation("relu")(x)
-x = Dropout(0.6)(x)
+x = Dropout(0.5)(x)
 x = Dense(layer2, kernel_regularizer=l2(0.05))(x)
 x = BatchNormalization()(x)
 x = tf.keras.layers.Activation("relu")(x)
-x = Dropout(0.5)(x)
+x = Dropout(0.4)(x)
 
 # SE-Block direkt vor dem Output-Layer
 x = squeeze_excite_block(x)
@@ -206,11 +211,12 @@ test_loss, test_acc = model.evaluate(test_generator)
 print(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 InErgebnisseDateiSichern(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 
-
+aktuelle_zeit = datetime.now()
+model.save(os.path.join(os.path.dirname(__file__), f'best_model_acc{test_acc:.3f}_{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))
 
 # .h5 löschen
-if os.path.exists("best_model.h5"):
-    os.remove("best_model.h5")
+#if os.path.exists("best_model.h5"):
+ #   os.remove("best_model.h5")
 
 if plot:
     paper_color = '#EEF6FF'
