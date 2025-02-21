@@ -48,17 +48,19 @@ train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in [
 # Epochen=10 => (Layer1=12 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 78%
 # # Epochen=10 => (Layer1=12 Layer2=8) 185, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 77%
 # Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 94%
-# Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, Nochmal model speichern
+# Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a", 71%
+#Epochen=50 => (Layer1=10 Layer2=8) 182, 50V2, l2(0.04), Dropout 0.5/0.4, ResNet_a, 73%
+InBearbeitung = "Epochen=50 => (Layer1=10 Layer2=8) 182, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, noch machen
 #Test dauer = 1min
 epochen = 50
 layer1 = 10
 layer2 = 8 
-frozen_layers = 180
+frozen_layers = 182
 
 # Hyperparameter: Notiz: Grid Search funktioniert für Resnet nicht
-batch_size = 32
+batch_size = 16
 img_size = (192, 256)
-early_stopping_patience = 8
+early_stopping_patience = 12
 plot = True
 learning_rate = 0.001
 
@@ -77,8 +79,8 @@ def InErgebnisseDateiSichern(text):
 
 aktuelle_zeit = datetime.now()
 InErgebnisseDateiSichern(f"ResNet2--------Neuer Programmstart:--------{aktuelle_zeit.strftime('%d-%m-%Y')}_{aktuelle_zeit.strftime('%H-%M-%S')}")
-InErgebnisseDateiSichern(f"Learning Rate: {learning_rate}, epochen: {epochen}, layer1: {layer1}, layer2: {layer2}, batch_size: {batch_size}, early_stopping_patience: {early_stopping_patience}")
-
+InErgebnisseDateiSichern(f"Learning Rate: {learning_rate}, epochen: {epochen}, layer1: {layer1}, layer2: {layer2}, batch_size: {batch_size}, early_stopping_patience: {early_stopping_patience},")
+InErgebnisseDateiSichern(InBearbeitung)
 # Augmentation
 augmentation = tf.keras.Sequential([
     tf.keras.layers.RandomRotation(0.3),
@@ -212,11 +214,11 @@ print(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 InErgebnisseDateiSichern(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 
 aktuelle_zeit = datetime.now()
-model.save(os.path.join(os.path.dirname(__file__), f'best_model_acc{test_acc:.3f}_{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))
+model.save(os.path.join(os.path.dirname(model_save_path), f'best_model_acc{test_acc:.3f}_{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))
 
 # .h5 löschen
-#if os.path.exists("best_model.h5"):
- #   os.remove("best_model.h5")
+if os.path.exists("best_model.h5"):
+    os.remove("best_model.h5")
 
 if plot:
     paper_color = '#EEF6FF'
@@ -290,4 +292,4 @@ if plot:
     fig.show()
     aktuelle_zeit = datetime.now()
     fig.write_html(os.path.join(
-        model_save_path, fr'ResNet_model_{aktuelle_zeit.strftime("%d-%m-%Y")+"_"+aktuelle_zeit.strftime("%H-%M-%S")}.html'))
+        model_save_path, fr'ResNet_model_{aktuelle_zeit.strftime("%d-%m-%Y")+"_"+aktuelle_zeit.strftime("%H-%M-%S")}_Acc_{np.round(test_acc * 100, 2)}.html'))
