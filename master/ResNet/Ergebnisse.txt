@@ -583,3 +583,42 @@ ResNet2--------Neuer Programmstart:--------21-02-2025_07-09-56
 Learning Rate: 0.001, epochen: 50, layer1: 10, layer2: 8, batch_size: 32, early_stopping_patience: 12,
 Epochen=50 => (Layer1=10 Layer2=8) 182, 50V2, l2(0.04), Dropout 0.5/0.4, ResNet_a
 Test Accuracy: 0.7394, Test Loss: 0.5835
+ResNet2--------Neuer Programmstart:--------21-02-2025_11-31-53
+Learning Rate: 0.001, epochen: 50, layer1: 10, layer2: 8, batch_size: 16, early_stopping_patience: 12,
+Epochen=50 => (Layer1=10 Layer2=8) 182, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, noch machen
+Test Accuracy: 0.7281, Test Loss: 0.8638
+ResNet2--------Neuer Programmstart:--------21-02-2025_16-44-41
+Learning Rate: 0.001, epochen: 50, layer1: 8, layer2: 6, batch_size: 16, early_stopping_patience: 20,
+Epochen=50 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------21-02-2025_17-37-57
+Learning Rate: 0.001, epochen: 100, layer1: 8, layer2: 6, batch_size: 16, early_stopping_patience: 20,
+Epochen=50 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------21-02-2025_17-38-50
+Learning Rate: 0.001, epochen: 50, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=50 => (Layer1=10 Layer2=8) 185, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, noch machen
+Test Accuracy: 0.9078, Test Loss: 0.6140
+
+ResNet2--------Neuer Programmstart:--------22-02-2025_08-59-52
+Learning Rate: 0.001, epochen: 50, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 187, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+Test Accuracy: 0.8911, Test Loss: 0.4966
+
+ResNet2--------Neuer Programmstart:--------22-02-2025_17-44-25
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 190, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+Test Accuracy: 0.7989, Test Loss: 0.6006
+
+ResNet2--------Neuer Programmstart:--------23-02-2025_11-10-15
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------23-02-2025_11-12-33
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------23-02-2025_15-19-55
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+Test Accuracy: 0.8328, Test Loss: 0.5116

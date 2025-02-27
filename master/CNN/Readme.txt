@@ -156,17 +156,32 @@ Feedback 14.2.:
 
 
 Fragen:
--Folgende Zusatzfächer sollen auf meinem Zeugnis augegeben werden
--Thema genau schreiben
--ResNet = 94%
--Yolo =
--etwa 70 Seiten à 30 Zeilen (exklusive Bilder und
-Tabellen
--21 Wochen
--Englische fachbegriffe JANein
+- Folgende Zusatzfächer sollen auf meinem Zeugnis augegeben werden
+- Wann Theman ausgabe
+- Thema genau schreiben
+- ResNet = 86% (94%)
+- Yolo = 99,5% mit Augmentierung
+- etwa 70 Seiten à 30 Zeilen (exklusive Bilder und
+Tabellen)
+- 21 Wochen
+- Englische fachbegriffe JA/Nein?
+- Wo Masterarbeit abgeben, in welcher Form
+- Haben sie Noch weitere Vorgaben die Ihnen wichtig sind?
+- Überschrift groß
+
+Feedback Gültas:
+- So eintragen das ab jz 12 Wochen noch zeit
+- Bindung muss nicht teuer sein er lieft eh die PDf
+- (In Arbeit beschrieben, wie gemacht wurde)
+- Zitierung ordentlich, und nicht zum ende hängen lassen
+- Nicht wie bei Tum jedes Wort groß in Überschrift
+- Gültas, Mühlenschult (noch 2wochen urlaub) und Hellweg (Prüfungskommisionvorsitzender) müssen unterscheiben
+- 30 zeilen ich hab 35
+
+
+Wissen:
 -Antrag auf Zulassung zur Masterarbeit sind folgende weiteren
 Unterlagen beizufügen:
 a) eine Erklärung darüber, welche Module als Wahlpflichtmodule festgelegt werden
 b) eine Erklärung darüber, ob die Masterarbeit abweichend von § 30 Absatz 4 RPO in englischer Sprache 
 - Kolloquium: mindestens 30 und maximal 60 Minuten
-- Wo Masterarbeit abgeben, in welcher Form

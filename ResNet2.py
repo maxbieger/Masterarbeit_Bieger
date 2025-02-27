@@ -50,17 +50,20 @@ train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in [
 # Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 94%
 # Epochen=50 => (Layer1=10 Layer2=8) 180, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a", 71%
 #Epochen=50 => (Layer1=10 Layer2=8) 182, 50V2, l2(0.04), Dropout 0.5/0.4, ResNet_a, 73%
-InBearbeitung = "Epochen=50 => (Layer1=10 Layer2=8) 182, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, noch machen
+# Epochen=50 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.05), Dropout 0.5/0.4, ResNet_a, 90%
+# Epochen=60 => (Layer1=8 Layer2=8) 187, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, 89%
+# Epochen=60 => (Layer1=8 Layer2=8) 190, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, 79% weniger overfitting"
+InBearbeitung= "Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen"
 #Test dauer = 1min
-epochen = 50
-layer1 = 10
-layer2 = 8 
-frozen_layers = 182
+epochen = 60
+layer1 = 8
+layer2 = 8
+frozen_layers = 185
 
 # Hyperparameter: Notiz: Grid Search funktioniert für Resnet nicht
 batch_size = 16
 img_size = (192, 256)
-early_stopping_patience = 12
+early_stopping_patience = 20
 plot = True
 learning_rate = 0.001
 
@@ -68,7 +71,6 @@ learning_rate = 0.001
 #optimizer = Adam(learning_rate=lr_schedule)
 
 model_save_path = fr'master\ResNet'
-
 
 def InErgebnisseDateiSichern(text):
     try:
@@ -78,7 +80,7 @@ def InErgebnisseDateiSichern(text):
         print(f"Ein Fehler ist aufgetreten: {e}")
 
 aktuelle_zeit = datetime.now()
-InErgebnisseDateiSichern(f"ResNet2--------Neuer Programmstart:--------{aktuelle_zeit.strftime('%d-%m-%Y')}_{aktuelle_zeit.strftime('%H-%M-%S')}")
+InErgebnisseDateiSichern(f"\nResNet2--------Neuer Programmstart:--------{aktuelle_zeit.strftime('%d-%m-%Y')}_{aktuelle_zeit.strftime('%H-%M-%S')}")
 InErgebnisseDateiSichern(f"Learning Rate: {learning_rate}, epochen: {epochen}, layer1: {layer1}, layer2: {layer2}, batch_size: {batch_size}, early_stopping_patience: {early_stopping_patience},")
 InErgebnisseDateiSichern(InBearbeitung)
 # Augmentation
@@ -89,17 +91,6 @@ augmentation = tf.keras.Sequential([
     tf.keras.layers.RandomTranslation(height_factor=0.2, width_factor=0.2)
 ])
 scaler = Rescaling(1./255)
-
-# daten
-# train_generator = tf.keras.utils.image_dataset_from_directory(
-#     train_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
-# ).map(lambda x, y: (scaler(x), y)).map(lambda x, y: (augmentation(x), y))
-# val_generator = tf.keras.utils.image_dataset_from_directory(
-#     val_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
-# ).map(lambda x, y: (scaler(x), y))
-# test_generator = tf.keras.utils.image_dataset_from_directory(
-#     test_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical", shuffle=False
-# ).map(lambda x, y: (scaler(x), y))
 
 AUTOTUNE = tf.data.AUTOTUNE
 
@@ -166,14 +157,14 @@ for layer in base_model.layers[:frozen_layers]:  # Nur letzte 50 Schichten train
 x = base_model.output
 x = GlobalAveragePooling2D()(x)  # Feature-Maps auf globale Merkmale reduzieren
 # Dense-Schichten mit BatchNorm & Dropout
-x = Dense(layer1, kernel_regularizer=l2(0.05))(x)
+x = Dense(layer1, kernel_regularizer=l2(0.1))(x)
 x = BatchNormalization()(x)
 x = tf.keras.layers.Activation("relu")(x)
 x = Dropout(0.5)(x)
-x = Dense(layer2, kernel_regularizer=l2(0.05))(x)
+x = Dense(layer2, kernel_regularizer=l2(0.1))(x)
 x = BatchNormalization()(x)
 x = tf.keras.layers.Activation("relu")(x)
-x = Dropout(0.4)(x)
+x = Dropout(0.5)(x)
 
 # SE-Block direkt vor dem Output-Layer
 x = squeeze_excite_block(x)
@@ -214,7 +205,8 @@ print(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 InErgebnisseDateiSichern(f"Test Accuracy: {test_acc:.4f}, Test Loss: {test_loss:.4f}")
 
 aktuelle_zeit = datetime.now()
-model.save(os.path.join(os.path.dirname(model_save_path), f'best_model_acc{test_acc:.3f}_{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))
+path=os.path.join(model_save_path, f'best_model_acc{test_acc:.3f}_{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5')
+model.save(path)
 
 # .h5 löschen
 if os.path.exists("best_model.h5"):

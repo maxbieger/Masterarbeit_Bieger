@@ -68,17 +68,17 @@ def visualize_and_save_conv_filters(model, save_dir):
 
 param_grid = {
     'learning_rate': [0.001],#0.05 beste ergebnisse als 0.01, 0.2, ab 0.05 nur noch 65%, 0.001 =88
-    'epochs_list': [4],#da viele bilde, wenig epochen
+    'epochs_list': [1],#da viele bilde, wenig epochen
     'layer1': [10],#Erst schicht viel ist gut, Zu viele layer = overfitting
-    'layer2': [9,8,7],
-    'layer3': [5,4,3],
-    'Denselayer': [5,4,3],#Denselayer 4>6>3>5
+    'layer2': [7],
+    'layer3': [3],
+    'Denselayer': [4],#Denselayer 3>4>6>5
     'Augmentierung':[True]# Augmentierung ein/aus schalten
 }
 DatensatzName= "Dataset_complete_neu"
 Ergebnisse_pfad = r'master\CNN\ErgebnisseCNN.txt'
 model_save_path = r'master\CNN'
-batch_size= 8
+batch_size= 16
 Early_stopping_patience = 5
 plot = True
 gpu = False
