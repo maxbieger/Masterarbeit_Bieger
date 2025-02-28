@@ -68,7 +68,7 @@ def visualize_and_save_conv_filters(model, save_dir):
 
 param_grid = {
     'learning_rate': [0.001],#0.05 beste ergebnisse als 0.01, 0.2, ab 0.05 nur noch 65%, 0.001 =88
-    'epochs_list': [1],#da viele bilde, wenig epochen
+    'epochs_list': [5],#da viele bilde, wenig epochen
     'layer1': [10],#Erst schicht viel ist gut, Zu viele layer = overfitting
     'layer2': [7],
     'layer3': [3],
@@ -79,7 +79,7 @@ DatensatzName= "Dataset_complete_neu"
 Ergebnisse_pfad = r'master\CNN\ErgebnisseCNN.txt'
 model_save_path = r'master\CNN'
 batch_size= 16
-Early_stopping_patience = 5
+Early_stopping_patience = 20
 plot = True
 gpu = False
 Show_Augmentation_on_train = False
@@ -91,7 +91,6 @@ train_dir = fr'master\CNN\{DatensatzName}\Train'
 val_dir = fr'master\CNN\{DatensatzName}\Validation'
 # wird am ende des Progrmms verwendet um das fertige modell mit neuen daten zu testen
 test_dir = fr'master\CNN\{DatensatzName}\Test'
-
 
 def InErgebnisseDateiSichern(text):
     try:
@@ -108,8 +107,7 @@ print('Setup complete.','DatensatzName')
 train_healthy_dir = os.path.join(train_dir, 'Healthy')
 train_dry_dir = os.path.join(train_dir, 'Dry')
 
-
-# Giving names to each directory
+# directory
 directories = {
     train_dir: 'Train',
     test_dir: 'Test',
@@ -146,7 +144,6 @@ for dir, name in directories.items():
 if not len(unique_dimensions) == 1:
     print(f"\nFound {len(unique_dimensions)} unique image dimensions: {unique_dimensions}")
 
-
 # Checking if all the images in the dataset have the same dimensions
 dims_counts = defaultdict(int)
 
@@ -161,7 +158,6 @@ for dir, name in directories.items():
                 
 for dimension, count in dims_counts.items():
     print(f"\nDimension {dimension}: {count} images")
-
 
 # Checking images dtype
 all_uint8 = True
@@ -188,7 +184,7 @@ if not all_uint8:
 if not all_in_range:
     print(" - Not all images have the same pixel values from 0 to 255")
 
-#Configuring GPU
+# Configuring GPU
 if gpu:
     print('GPUS Tensor')
     gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -225,12 +221,13 @@ train = tf.keras.utils.image_dataset_from_directory(
     label_mode='categorical',
     class_names=['Healthy', 'Dry'],
     batch_size=batch_size,    
-    image_size=(192, 256), 
+    image_size=(256,192), 
     shuffle=True,  
     seed=seed,  
     validation_split=0,  
     crop_to_aspect_ratio=True
 )#Augmentierung wird später vorgenommen
+
 
 def show_images_from_dataset(dataset, class_names, num_images):
     # Lade eine Batch aus dem Dataset
@@ -258,7 +255,7 @@ test = tf.keras.utils.image_dataset_from_directory(
     label_mode='categorical',
     class_names=['Healthy', 'Dry'],
     batch_size=batch_size,    
-    image_size=(192, 256), 
+    image_size=( 256,192), 
     shuffle=True,  
     seed=seed,  
     validation_split=0,  
@@ -271,7 +268,7 @@ validation = tf.keras.utils.image_dataset_from_directory(
     label_mode='categorical',
     class_names=['Healthy', 'Dry'],
     batch_size=batch_size,    
-    image_size=(192, 256), 
+    image_size=( 256,192), 
     shuffle=True,  
     seed=seed,  
     validation_split=0,  
@@ -322,11 +319,10 @@ for params in grid:
     # CNN Architektur
     model = Sequential()
 
-    model.add(Conv2D(params['layer1'], (3, 3), padding='same', input_shape=(192, 256, 3)))
+    model.add(Conv2D(params['layer1'], (3, 3), padding='same', input_shape=( 256,192, 3)))
     model.add(Activation('relu'))
     model.add(BatchNormalization())
     model.add(MaxPooling2D(pool_size=(2, 2)))
-    #model.add(Dropout(0.2))
 
     model.add(Conv2D(params['layer2'], (3, 3), padding='same'))
     model.add(Activation('relu'))
@@ -358,7 +354,7 @@ for params in grid:
                               patience = Early_stopping_patience, mode = 'max',
                               restore_best_weights = True)
 
-    checkpoint = ModelCheckpoint(os.path.join(os.path.dirname(__file__), 'best_model_checkpoint.keras'),
+    checkpoint = ModelCheckpoint(os.path.join(model_save_path, 'best_model_checkpoint.keras'),
                             monitor = 'val_accuracy',
                             save_best_only = True)
 
@@ -375,17 +371,7 @@ for params in grid:
     except Exception as e:
         print("An error occurred: ", e)
 
-
-    # print('\nValidation Loss: ', val_loss)
-    # print('\nValidation Accuracy: ', np.round(val_acc * 100,2), '%') 
-    # preds = model.predict(validation)  # Running model on the validation dataset
-    # val_loss, val_acc = model.evaluate(validation) # Obtaining Loss and Accuracy on the val dataset
-    # print('\nTrain Loss: ', train_loss)
-    # print('\nTrain Accuracy: ', np.round(train_acc * 100,2), '%')
-    # preds = model.predict(train)  # Running model on the validation dataset
-    # train_loss, train_acc = model.evaluate(train)
-    
-    preds = model.predict(test)  # Running model on the test dataset
+    preds = model.predict(test) 
     test_loss, test_acc = model.evaluate(test)
     print('\nTest Loss: ', test_loss)
     print('Test Accuracy: ', np.round(test_acc * 100,2), '%')
@@ -404,14 +390,8 @@ for params in grid:
         InErgebnisseDateiSichern(f"New best model with accuracy: {best_accuracy}")
         
 
-# # Speicherort definieren
-# filter_save_dir = os.path.join(model_save_path, "conv_filters")
-# # Rufe die Funktion auf
-# visualize_and_save_conv_filters(best_model, filter_save_dir)
-
-
 # Beste Ergebnisse ausgeben
-model.save(os.path.join(os.path.dirname(__file__), f'best_model{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))
+best_model.save(os.path.join(model_save_path, f'best_model_acc_{test_acc}_{aktuelle_zeit.strftime("%d.%m.%Y")}_{aktuelle_zeit.strftime("%H-%M-%S")}.h5'))
 print('\nErgebnisse:')
 print(f"Best Test Accuracy: {best_accuracy}")
 InErgebnisseDateiSichern(f"Best Test Accuracy: {best_accuracy}")
@@ -492,5 +472,4 @@ if plot:
     # Showing figure
     fig.show()
     # Save the figure
-    fig.write_html(os.path.join(model_save_path, f'best_model_plot_{aktuelle_zeit.strftime("%d_%m_%Y_%H_%M_%S")}.html'))
-
+    fig.write_html(os.path.join(model_save_path, f'best_model_plot_acc_{np.round(best_accuracy * 100, 2)}_{aktuelle_zeit.strftime("%d_%m_%Y_%H_%M_%S")}.html'))

@@ -33,10 +33,6 @@ ausgabe_test_dry = os.path.join(ausgangs_ordner_basis, DatensatzName, "Test\Dry"
 ausgabe_train_dry = os.path.join(ausgangs_ordner_basis, DatensatzName, "Train\Dry")
 ausgabe_validation_dry = os.path.join(ausgangs_ordner_basis, DatensatzName, "Validation\Dry")
 
-# ausgabe_test_superdry = os.path.join(ausgangs_ordner_basis, DatensatzName, "Test/SuperDry")
-# ausgabe_train_superdry = os.path.join(ausgangs_ordner_basis, DatensatzName, "Train/SuperDry")
-# ausgabe_validation_superdry = os.path.join(ausgangs_ordner_basis, DatensatzName, "Validation/SuperDry")
-
 ausgabe_test_healthy = os.path.join(ausgangs_ordner_basis, DatensatzName, "Test\Healthy")
 ausgabe_train_healthy = os.path.join(ausgangs_ordner_basis, DatensatzName, "Train\Healthy")
 ausgabe_validation_healthy = os.path.join(ausgangs_ordner_basis, DatensatzName, "Validation\Healthy")
@@ -97,12 +93,10 @@ def berechne_verteilung(ordner_liste):
         verteilung_dict[ordner] = anzahl_dateien
         gesamt_anzahl += anzahl_dateien
 
-    #print("Verteilung in den Zielordnern:")
     gesamt_kategorien = {"Test": 0, "Train": 0, "Validation": 0}
 
     for ordner, anzahl in verteilung_dict.items():
         prozent = (anzahl / gesamt_anzahl) * 100 if gesamt_anzahl > 0 else 0
-        #print(f"{ordner}: {anzahl} Dateien ({prozent:.2f}%)")
         if "Test" in ordner:
             gesamt_kategorien["Test"] += anzahl
         elif "Train" in ordner:
@@ -127,7 +121,6 @@ def berechne_verteilung(ordner_liste):
 
 alle_zielordner = [
     ausgabe_test_dry, ausgabe_train_dry, ausgabe_validation_dry,
-    #ausgabe_test_superdry, ausgabe_train_superdry, ausgabe_validation_superdry,
     ausgabe_test_healthy, ausgabe_train_healthy, ausgabe_validation_healthy
 ]
 berechne_verteilung(alle_zielordner)
@@ -135,15 +128,14 @@ if Verteilung_durch_duplizieren_ausgleichen:
     def count_images_in_path(path):
         # Liste aller Dateien im angegebenen Verzeichnis abrufen
         bilder = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
-        # Rückgabe der Anzahl der Bilder
         return len(bilder)
+    
     def duplizieren_bilder(pfad, target_anzahl):
         bilder = [f for f in os.listdir(pfad) if os.path.isfile(os.path.join(pfad, f))]
         aktuelle_anzahl = len(bilder)
         if aktuelle_anzahl < target_anzahl:
             fehlende_bilder = target_anzahl - aktuelle_anzahl
         
-            
             # Duplizieren der Bilder
             bilder_zu_duplizieren = bilder[:fehlende_bilder]
             
@@ -152,7 +144,6 @@ if Verteilung_durch_duplizieren_ausgleichen:
                 ziel = os.path.join(pfad, f"copy_of_{bild}")
                 shutil.copy2(quelle, ziel)
                 
-
     # Überprüfung und Duplizieren für jeden Pfad
     duplizieren_bilder(ausgabe_test_healthy,count_images_in_path(ausgabe_test_dry))
     duplizieren_bilder(ausgabe_train_healthy,count_images_in_path(ausgabe_train_dry))

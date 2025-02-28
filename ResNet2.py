@@ -100,6 +100,47 @@ train_generator = tf.keras.utils.image_dataset_from_directory(
   .cache() \
   .prefetch(buffer_size=AUTOTUNE)
 
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+from PIL import Image, ImageDraw
+import tensorflow as tf
+
+import tensorflow as tf
+
+# Funktion zur Extraktion eines zufälligen Bildes aus einem tf.data.Dataset
+def get_random_image_from_tf_dataset(dataset):
+    """
+    Wählt zufällig ein Bild aus einem TensorFlow Dataset aus und gibt es als NumPy-Array zurück.
+    """
+    all_images = []
+    
+    # Durchlaufe das Dataset und speichere Bilder in einer Liste
+    for batch in dataset.take(5):  # Begrenzen, um nicht alle Bilder zu laden
+        images, labels = batch  # Bilder und Labels entpacken
+        for img in images:
+            all_images.append(img.numpy().astype(np.uint8))  # In NumPy-Array umwandeln
+
+    if not all_images:
+        print("Keine Bilder im Dataset gefunden.")
+        return None
+
+    # Zufälliges Bild auswählen
+    random_image = random.choice(all_images)
+    return random_image
+
+# 1️⃣ Zufälliges Originalbild aus dem TensorFlow Dataset anzeigen
+random_original_image = get_random_image_from_tf_dataset(train_generator)
+
+if random_original_image is not None:
+    plt.figure(figsize=(6, 4))
+    plt.imshow(random_original_image)
+    plt.axis("off")
+    plt.title("Zufälliges Bild aus dem Trainings-Datensatz")
+    plt.show()
+
+
+
 val_generator = tf.keras.utils.image_dataset_from_directory(
     val_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
 ).map(lambda x, y: (scaler(x), y)) \

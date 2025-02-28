@@ -40,12 +40,3 @@ for i in range(30):
 
     print(f'Predicted Class: {preds_label}')
     print(f'Confidence Score: {preds[0][preds_class]}')
-
-    # # Rechteck zeichnen auf das Originalbild
-    # draw = ImageDraw.Draw(original_image)
-    # rect_x1, rect_y1 = (og_width - 256) // 2, (og_height - 192) // 2
-    # rect_x2, rect_y2 = rect_x1 + 256, rect_y1 + 192
-    # draw.rectangle([rect_x1, rect_y1, rect_x2, rect_y2], outline="red", width=5)
-
-    # # Bild mit Rechteck anzeigen
-    # original_image.show()

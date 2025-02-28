@@ -1,1 +1,88 @@
 --------Neuer Programm start:-----27.02.2025_16:24:58
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 1, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.047644153237342834
+Test Accuracy: 99.17 %
+New best model with accuracy: 0.9916666746139526
+Best Test Accuracy: 0.9916666746139526
+Ende des Programms. = 27.02.2025_16:33:14
+
+
+--------Neuer Programm start:-----27.02.2025_16:45:47
+--------Neuer Programm start:-----27.02.2025_16:51:07
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 1, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+--------Neuer Programm start:-----27.02.2025_16:54:42
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 1, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.026046281680464745
+Test Accuracy: 99.67 %
+New best model with accuracy: 0.996666669845581
+Best Test Accuracy: 0.996666669845581
+Ende des Programms. = 27.02.2025_17:00:37
+
+
+--------Neuer Programm start:-----27.02.2025_18:34:25
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 1, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.042973875999450684
+Test Accuracy: 98.56 %
+New best model with accuracy: 0.9855555295944214
+Best Test Accuracy: 0.9855555295944214
+Ende des Programms. = 27.02.2025_18:40:17
+
+
+--------Neuer Programm start:-----27.02.2025_19:39:05
+--------Neuer Programm start:-----27.02.2025_19:43:39
+--------Neuer Programm start:-----27.02.2025_19:45:47
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 1, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+--------Neuer Programm start:-----27.02.2025_19:48:58
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 1, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+--------Neuer Programm start:-----27.02.2025_19:53:06
+--------Neuer Programm start:-----27.02.2025_22:21:55
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 50, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.010020583868026733
+Test Accuracy: 99.67 %
+New best model with accuracy: 0.996666669845581
+Best Test Accuracy: 0.996666669845581
+Ende des Programms. = 27.02.2025_23:14:58
+
+
+--------Neuer Programm start:-----27.02.2025_23:15:16
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 50, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.0062330495566129684
+Test Accuracy: 99.78 %
+New best model with accuracy: 0.9977777600288391
+Best Test Accuracy: 0.9977777600288391
+Ende des Programms. = 28.02.2025_00:48:48
+
+
+--------Neuer Programm start:-----28.02.2025_09:57:05
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 50, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.010168800130486488
+Test Accuracy: 99.61 %
+New best model with accuracy: 0.9961110949516296
+Best Test Accuracy: 0.9961110949516296
+Ende des Programms. = 28.02.2025_11:51:18
+
+
+--------Neuer Programm start:-----28.02.2025_16:55:29
+--------Neuer Programm start:-----28.02.2025_17:00:26
+--------Neuer Programm start:-----28.02.2025_17:01:38
+--------Neuer Programm start:-----28.02.2025_17:02:14
+--------Neuer Programm start:-----28.02.2025_17:02:52
+--------Neuer Programm start:-----28.02.2025_17:03:45
+--------Neuer Programm start:-----28.02.2025_17:04:16
+--------Neuer Programm start:-----28.02.2025_17:04:59
+--------Neuer Programm start:-----28.02.2025_17:05:39
+--------Neuer Programm start:-----28.02.2025_17:06:54
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 50, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.6941198110580444
+Test Accuracy: 46.94 %
+--------Neuer Programm start:-----28.02.2025_17:13:19
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 50, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+--------Neuer Programm start:-----28.02.2025_17:17:56
+Testing with params: {'Augmentierung': True, 'Denselayer': 4, 'epochs_list': 5, 'layer1': 10, 'layer2': 7, 'layer3': 3, 'learning_rate': 0.001}
+Test Loss: 0.006532064639031887
+Test Accuracy: 99.72 %
+New best model with accuracy: 0.9972222447395325
+Best Test Accuracy: 0.9972222447395325
+Ende des Programms. = 28.02.2025_17:43:57
+
+

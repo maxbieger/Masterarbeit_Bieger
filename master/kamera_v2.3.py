@@ -4,30 +4,18 @@ from datetime import datetime
 import os
 
 def add_timestamp_to_image(image, timestamp):
-    """
-    Fügt die aktuelle Zeit als Text in die obere Ecke des Bildes ein.
-
-    :param image: Das Bild, auf das der Zeitstempel geschrieben wird
-    :param timestamp: Die aktuelle Zeit als String
-    :return: Das Bild mit dem Zeitstempel
-    """
+    # Fügt die aktuelle Zeit als Text in die obere Ecke des Bildes ein.
     font = cv2.FONT_HERSHEY_SIMPLEX
     font_scale = 0.2
-    color = (255, 255, 255)  # Weiß
+    color = (255, 255, 255) 
     thickness = 1
-    position = (5, 15)  # Obere linke Ecke
+    position = (5, 15)
 
-    # Text auf das Bild schreiben
     cv2.putText(image, timestamp, position, font, font_scale, color, thickness, cv2.LINE_AA)
     return image
 
 def capture_images(interval_minutes, output_folder):
-    """
-    Nimmt Bilder in einem bestimmten Intervall auf und verwendet die Systemzeit.
-
-    :param interval_minutes: Intervall in Minuten zwischen den Aufnahmen
-    :param output_folder: Ordner, in dem die Bilder gespeichert werden
-    """
+    # Nimmt Bilder in einem bestimmten Intervall auf und verwendet die Systemzeit.
     # Öffne die Kamera
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 256)
@@ -41,7 +29,6 @@ def capture_images(interval_minutes, output_folder):
 
     try:
         while True:
-            # Zeitstempel für das Bild und den Dateinamen
             current_time = datetime.now()
             timestamp = current_time.strftime("%Y-%m-%d %H:%M:%S")
             filename = f"{output_folder}/image_{current_time.strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
