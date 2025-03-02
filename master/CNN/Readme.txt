@@ -1,5 +1,5 @@
 Kamera 256x192
-User: max Passwort: mB@Tum0066
+User: max
 Datei übersicht:
 Kamera_v2.py = Ein foto speichern, aufsteigend nummerrieren, drehen, farb palette
 Kamera_v2.1.py = dauerhafter Stream
