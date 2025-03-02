@@ -68,7 +68,7 @@ def visualize_and_save_conv_filters(model, save_dir):
 
 param_grid = {
     'learning_rate': [0.001],#0.05 beste ergebnisse als 0.01, 0.2, ab 0.05 nur noch 65%, 0.001 =88
-    'epochs_list': [5],#da viele bilde, wenig epochen
+    'epochs_list': [50],#da viele bilde, wenig epochen
     'layer1': [10],#Erst schicht viel ist gut, Zu viele layer = overfitting
     'layer2': [7],
     'layer3': [3],

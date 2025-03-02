@@ -630,3 +630,111 @@ Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a,
 ResNet2--------Neuer Programmstart:--------28-02-2025_17-45-31
 Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
 Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_17-55-34
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_17-58-29
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_18-00-05
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_18-00-43
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_18-01-58
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_18-03-18
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_18-07-13
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------28-02-2025_18-12-05
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-36-10
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-41-03
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-42-05
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-42-52
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-43-32
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-45-45
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-48-34
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-49-08
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-50-07
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-50-35
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-51-04
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-51-57
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-52-22
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-52-55
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-53-46
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-54-21
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-55-18
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-58-21
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen
+
+ResNet2--------Neuer Programmstart:--------02-03-2025_10-59-01
+Learning Rate: 0.001, epochen: 60, layer1: 8, layer2: 8, batch_size: 16, early_stopping_patience: 20,
+Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen

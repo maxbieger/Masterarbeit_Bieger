@@ -8,6 +8,7 @@ import numpy as np
 from keras.regularizers import l2
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 import tensorflow as tf
+tf.get_logger().setLevel('ERROR')
 import os
 from keras.applications import ResNet101, ResNet50, ResNet152, ResNet50V2, ResNet101V2, ResNet152V2
 from keras.preprocessing.image import ImageDataGenerator
@@ -55,20 +56,17 @@ train_dir, val_dir, test_dir = [os.path.join(data_dir, d) for d in [
 # Epochen=60 => (Layer1=8 Layer2=8) 190, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, 79% weniger overfitting"
 InBearbeitung= "Epochen=60 => (Layer1=8 Layer2=8) 185, 50V2, l2(0.1), Dropout 0.5/0.5, ResNet_a, noch machen"
 #Test dauer = 1min
-epochen = 60
+epochen = 6
 layer1 = 8
 layer2 = 8
 frozen_layers = 185
 
 # Hyperparameter: Notiz: Grid Search funktioniert für Resnet nicht
 batch_size = 16
-img_size = (192, 256)
+img_size = (256,192)
 early_stopping_patience = 20
 plot = True
 learning_rate = 0.001
-
-#lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(initial_learning_rate=0.001, decay_steps=1000, decay_rate=0.9)
-#optimizer = Adam(learning_rate=lr_schedule)
 
 model_save_path = fr'master\ResNet'
 
@@ -83,63 +81,22 @@ aktuelle_zeit = datetime.now()
 InErgebnisseDateiSichern(f"\nResNet2--------Neuer Programmstart:--------{aktuelle_zeit.strftime('%d-%m-%Y')}_{aktuelle_zeit.strftime('%H-%M-%S')}")
 InErgebnisseDateiSichern(f"Learning Rate: {learning_rate}, epochen: {epochen}, layer1: {layer1}, layer2: {layer2}, batch_size: {batch_size}, early_stopping_patience: {early_stopping_patience},")
 InErgebnisseDateiSichern(InBearbeitung)
+
 # Augmentation
 augmentation = tf.keras.Sequential([
-    tf.keras.layers.RandomRotation(0.3),
+    tf.keras.layers.RandomRotation(0.15),
     tf.keras.layers.RandomFlip("horizontal_and_vertical"),
-    tf.keras.layers.RandomZoom(0.2),
-    tf.keras.layers.RandomTranslation(height_factor=0.2, width_factor=0.2)
+    tf.keras.layers.RandomZoom(0.1)
 ])
 scaler = Rescaling(1./255)
 
-AUTOTUNE = tf.data.AUTOTUNE
+AUTOTUNE = tf.data.AUTOTUNE# augmentation(scaler(x))
 
 train_generator = tf.keras.utils.image_dataset_from_directory(
     train_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
-).map(lambda x, y: (scaler(x), y)).map(lambda x, y: (augmentation(x), y)) \
+).map(lambda x, y: (augmentation(scaler(x)), y)) \
   .cache() \
   .prefetch(buffer_size=AUTOTUNE)
-
-import numpy as np
-import random
-import matplotlib.pyplot as plt
-from PIL import Image, ImageDraw
-import tensorflow as tf
-
-import tensorflow as tf
-
-# Funktion zur Extraktion eines zufälligen Bildes aus einem tf.data.Dataset
-def get_random_image_from_tf_dataset(dataset):
-    """
-    Wählt zufällig ein Bild aus einem TensorFlow Dataset aus und gibt es als NumPy-Array zurück.
-    """
-    all_images = []
-    
-    # Durchlaufe das Dataset und speichere Bilder in einer Liste
-    for batch in dataset.take(5):  # Begrenzen, um nicht alle Bilder zu laden
-        images, labels = batch  # Bilder und Labels entpacken
-        for img in images:
-            all_images.append(img.numpy().astype(np.uint8))  # In NumPy-Array umwandeln
-
-    if not all_images:
-        print("Keine Bilder im Dataset gefunden.")
-        return None
-
-    # Zufälliges Bild auswählen
-    random_image = random.choice(all_images)
-    return random_image
-
-# 1️⃣ Zufälliges Originalbild aus dem TensorFlow Dataset anzeigen
-random_original_image = get_random_image_from_tf_dataset(train_generator)
-
-if random_original_image is not None:
-    plt.figure(figsize=(6, 4))
-    plt.imshow(random_original_image)
-    plt.axis("off")
-    plt.title("Zufälliges Bild aus dem Trainings-Datensatz")
-    plt.show()
-
-
 
 val_generator = tf.keras.utils.image_dataset_from_directory(
     val_dir, image_size=img_size, batch_size=batch_size, label_mode="categorical"
@@ -192,7 +149,7 @@ def cbam_block(input_tensor, ratio=8):
 
 # Lade Basis-ResNet101 (mit eingefrorenen frühen Schichten)
 base_model = ResNet50V2(
-    weights="imagenet", include_top=False, input_shape=(192, 256, 3))
+    weights="imagenet", include_top=False, input_shape=( 256,192, 3))
 for layer in base_model.layers[:frozen_layers]:  # Nur letzte 50 Schichten trainierbar
     layer.trainable = False
 x = base_model.output
