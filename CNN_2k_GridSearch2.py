@@ -1,4 +1,3 @@
-#from tensorflow.keras.models import Sequential
 from keras.models import Sequential 
 from keras.layers import Conv2D                              # Convolutional layer
 from keras.layers import MaxPooling2D                        # Max pooling layer 
@@ -31,41 +30,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-# Funktion zur Anzeige und Speicherung der Konvolutionsfilter
-def visualize_and_save_conv_filters(model, save_dir):
-    # Iteriere über alle Layer des Modells
-    for i, layer in enumerate(model.layers):
-        if isinstance(layer, Conv2D):  # Prüfe, ob es sich um eine Convolutional Layer handelt
-            filters, biases = layer.get_weights()  # Extrahiere Filter und Biases
-            num_filters = filters.shape[-1]  # Anzahl der Filter
-            filter_size = filters.shape[:2]  # Größe der Filter (z.B., 3x3)
-
-            print(f"Layer {i} - {layer.name}: {num_filters} Filter mit Größe {filter_size}")
-
-            # Normiere die Filter für Visualisierung
-            f_min, f_max = filters.min(), filters.max()
-            filters = (filters - f_min) / (f_max - f_min)
-
-            # Visualisierung der Filter
-            cols = 8  # Anzahl der Spalten (Anzahl der Filter pro Zeile)
-            rows = num_filters // cols + (num_filters % cols > 0)
-            fig, axes = plt.subplots(rows, cols, figsize=(cols * 2, rows * 2))
-            axes = axes.flatten()
-
-            for j in range(num_filters):
-                ax = axes[j]
-                filter_img = filters[..., j]  # Wähle Filter j
-                ax.imshow(filter_img[:, :, 0], cmap="viridis")
-                ax.axis("off")
-            plt.tight_layout()
-
-            # Speicher den Plot
-            os.makedirs(save_dir, exist_ok=True)
-            save_path = os.path.join(save_dir, f"{layer.name}_filters.png")
-            plt.savefig(save_path)
-            print(f"Konvolutionsmatrix gespeichert unter: {save_path}")
-            plt.show()
-
 param_grid = {
     'learning_rate': [0.001],#0.05 beste ergebnisse als 0.01, 0.2, ab 0.05 nur noch 65%, 0.001 =88
     'epochs_list': [50],#da viele bilde, wenig epochen
@@ -85,12 +49,10 @@ gpu = False
 Show_Augmentation_on_train = False
 
 # Loading training, testing, and validation directories
-# wird für das Training verwendet
-train_dir = fr'master\CNN\{DatensatzName}\Train'
-# wird accuracy berechnung des modells wären des trainings verwendet
-val_dir = fr'master\CNN\{DatensatzName}\Validation'
-# wird am ende des Progrmms verwendet um das fertige modell mit neuen daten zu testen
-test_dir = fr'master\CNN\{DatensatzName}\Test'
+
+train_dir = fr'master\CNN\{DatensatzName}\Train' # wird für das Training verwendet
+val_dir = fr'master\CNN\{DatensatzName}\Validation' # wird accuracy berechnung des modells wären des trainings verwendet
+test_dir = fr'master\CNN\{DatensatzName}\Test' # wird am ende des Progrmms verwendet um das fertige modell mit neuen daten zu testen
 
 def InErgebnisseDateiSichern(text):
     try:
@@ -469,7 +431,5 @@ if plot:
     fig.update_xaxes(title_text='Epoch', row=1, col=1)
     fig.update_xaxes(title_text='Epoch', row=1, col=2)
 
-    # Showing figure
     fig.show()
-    # Save the figure
     fig.write_html(os.path.join(model_save_path, f'best_model_plot_acc_{np.round(best_accuracy * 100, 2)}_{aktuelle_zeit.strftime("%d_%m_%Y_%H_%M_%S")}.html'))
