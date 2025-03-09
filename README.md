@@ -26,6 +26,5 @@ Dieses Repository enthält verschiedene Machine Learning Modelle für Bildverarb
 
 1. **Repository klonen:**
    ```bash
-   git clone https://github.com/maxbieger/Masterarbeit_Bieger.git
-   cd dein-repository
+   git clone https://github.com/dein-benutzername/dein-repository.git
 
