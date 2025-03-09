@@ -6,8 +6,8 @@ import cv2
 import numpy as np
 
 # ========================== KONFIGURATION ==========================
-train = True
-val = False
+train = False
+augmentation = True
 
 # Datensatz & Ausgabe-Verzeichnis anpassen
 DatensatzName = "Dataset_yolo2"
@@ -23,24 +23,37 @@ apply_augmentation = True
 
 # ========================== AUGMENTIERUNG ==========================
 
-def augment_image_opencv(image_path):
+def augment_image_opencv(image_path, output_path):
     image = cv2.imread(image_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # Konvertiere zu RGB für PIL
 
-    if random.random() > 0.5:
-        image = cv2.flip(image, 1)
+    # Zufällige horizontale oder vertikale Spiegelung
+    flip_type = random.choice([ -1]) #None,None,None, 1, 0, # 1 = horizontal, 0 = vertikal, -1 = beides
+    if flip_type is not None:
+        image = cv2.flip(image, flip_type)
 
-    angle = random.uniform(-25, 25)  # Drehen 
+    # Zufällige Rotation
+    angle = random.uniform(-25, 25)  
     h, w = image.shape[:2]
     center = (w // 2, h // 2)
     rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
     image = cv2.warpAffine(image, rotation_matrix, (w, h), borderMode=cv2.BORDER_REFLECT_101)
 
-    if random.random() < 0.2:
-        noise = np.random.normal(0, 1, image.shape).astype(np.uint8)  # Leichtes Rauschen
+    # Zufälliges Rauschen hinzufügen
+    if random.random() < 1:
+        noise = np.random.normal(0, 1, image.shape).astype(np.uint8)
         image = cv2.add(image, noise)
 
     return image
+
+if augmentation:
+    
+    # Dateiname festlegen
+    save_path = r'C:\Users\maxbi\GitHub\Masterarbeit_Bieger\master\Beispiel_Bild_mit_Augmentierung2.jpg'
+
+    # Speichert das augmentierte Bild
+    image = cv2.cvtColor(augment_image_opencv(r'C:\Users\maxbi\GitHub\Masterarbeit_Bieger\master\Beispiel_Bild_ohne_Augmentierung.jpg', save_path), cv2.COLOR_RGB2BGR) 
+    cv2.imwrite(save_path, image)
 
 # ========================== TRAINING ==========================
 if train:
